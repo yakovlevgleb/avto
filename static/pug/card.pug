@@ -14,6 +14,96 @@ html(lang="ru")
 			.container-1
 				+preview-slider
 
+				.card
+					.card__row
+						ul.card__info-list
+							li.card__info-item.card__info-item--price Цена от
+								span.red 549 000 руб
+							li.card__info-item.card__info-item--profit Выгода от
+								span 70 000 руб
+							li.card__info-item.card__info-item--credit В кредит от
+								span 7 500 руб/мес
+
+						.present
+							p.present__title в Подарок
+							.present__items
+								.present__item
+									.present__item-overimg
+										img(src="./img/present-img-1.png" alt="").present__item-img
+									p.present__item-title GPS навигатор
+								.present__item
+									.present__item-overimg
+										img(src="./img/present-img-2.png" alt="").present__item-img
+									p.present__item-title Комплект зимних шин
+
+					.card__row
+						a(href="#").card__btn.btn.btn--blue Рассчитать кредит
+						a(href="#").card__btn.btn.btn--blue Рассчитать лизинг
+						a(href="#").card__btn.btn.btn--blue Рассчитать КАСКО
+						a(href="#").card__btn.btn Забронировать
+
+
+				.offer
+					form
+						.offer__row
+							.offer__col
+								.offer__title Хочу купить
+									span LADA XRAY CROSS 1,6л 16-кл., 5МТ, 106 л.с.
+							.offer__col
+								.checkbox
+									input(type="checkbox").checkbox__input
+									label.checkbox__label Нужен кредит
+								.checkbox
+									input(type="checkbox").checkbox__input
+									label.checkbox__label Хочу сдать свою машину в зачет
+								.checkbox
+									input(type="checkbox").checkbox__input
+									label.checkbox__label Нужна страховка
+								.checkbox
+									input(type="checkbox").checkbox__input
+									label.checkbox__label Хочу особую скидку
+							.offer__col
+								.offer__text
+									p В случае возникновения вопросов по поводу условий приобретения, способов кредитования, скидок и прочего вы можете обратитьсяпо телефону: +7 (351) 2 555 700
+								a(href="#").offer__btn.btn Заказать автомобиль
+
+				.action
+					.action__col
+						ul.action__list
+							li.action__list-item
+								a(href="#").action__list-href Выгода 50 000 руб. - при покупке по утилизации
+							li.action__list-item
+								a(href="#").action__list-href Выгода 40 000 руб. - при покупке по trade-in
+							li.action__list-item
+								a(href="#").action__list-href Выгода 20 000 руб. по программе LADA Finance
+							li.action__list-item
+								a(href="#").action__list-href КАСКО - выгоднее на 50%
+							li.action__list-item
+								a(href="#").action__list-href Добрый кредит - ставка всего 3%
+							li.action__list-item
+								a(href="#").action__list-href Дарим страховку!
+
+						a(href="#").action__all-href.btn Все новости и акции
+
+					.action__col
+						.action__slider
+							.swiper-container
+								.swiper-wrapper
+									- for (var i = 1; i < 5; i++) {
+										.swiper-slide
+											a(href="#").action__slider-overimg
+												img(src="./img/action-img-1.jpg" alt="").action__slider-overimg
+									- }
+								.swiper-pagination
+
+					.callback
+						.callback__title Выгодный заказ по телефону
+							a(href="tel:+73512555700") +7 (351) 2-555-700
+
+				.ibanner
+					a(href="#")
+						img(src="./img/banner-2.jpg" alt="")
+
 				.iseo
 					ul.iseo__banners
 						li.iseo__banners-item
@@ -29,4 +119,3 @@ html(lang="ru")
 		+footer
 		+hidden-blocks
 		+scripts
-
