@@ -14,6 +14,9 @@
 	box-shadow: none
 	white-space: nowrap
 	transition: .5s background-color, .5s color
+	outline: none
+	cursor: pointer
+	user-select: none
 
 	&:hover
 		background-color: $dark-red
@@ -74,6 +77,10 @@
 
 .ibanner
 	margin-bottom: 50px
+
+	& > a
+		display: block
+		font-size: 0
 
 	img
 		max-width: 100%

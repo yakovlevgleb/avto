@@ -1,0 +1,159 @@
+.form
+	.jq-selectbox
+		width: 100%
+		&__select
+			width: 100%
+			height: 36px
+			border: 1px solid #e0e0e0;
+			border-radius: 0
+			background-color: transparent
+			line-height: 36px
+			padding-right: 25px
+			&-text
+				display: inline-block
+				vertical-align: middle
+				width: 100%
+				color: $black;
+				font: 14px/36px 'Roboto';
+				align-self: center
+				margin-top: -2px
+		&__dropdown
+			top: 35px
+			border-radius: 0
+			border: 1px solid #e0e0e0;
+		li
+			padding-left: 20px
+			padding-right: 20px
+			&.selected
+				background-color: transparent
+				color: #231F20
+			&:hover, &:focus
+				background-color: $red
+		&__trigger
+			width: 11px
+			height: 7px
+			top: 50%
+			right: 10px
+			transition: .5s transform
+			transform: translateY(-50%) rotate(0)
+			&-arrow
+				position: static
+				border: none
+				width: 11px
+				height: 7px
+				background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAMAAADpsEdvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAASFBMVEUsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFL///8dxRfoAAAAFnRSTlMAHb0eHNsZ2fbaGhfXxBgV1McPyzERghD51wAAAAFiS0dEFwvWmI8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAwLIAvtUcg/AAAAQ0lEQVQI1y2LSRKAIBDE2hFENoEB+v9PFZecUpUKsNhkx4+xtObTw/GkD4/GxHxlpgiUyqbQxlog7LqqdgqGzPeaMm5SqgKFvm+wMwAAAABJRU5ErkJggg==')
+		&.dropdown.opened .jq-selectbox__trigger
+			transform: translateY(-50%) rotate(180deg)
+	&--filter
+		.form
+			&__field
+				width: calc(100%/3 - 13.3px)
+				@media (max-width: 767px)
+					width: 100%
+			&__submit
+				margin-left: auto
+				@media (max-width: 900px)
+					margin-left: 0
+					margin-top: 25px
+	&__row
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
+		justify-content: space-between
+		margin-bottom: 20px
+		&-left
+			@media (max-width: 900px)
+				width: 100%
+		&--action
+			justify-content: flex-start
+		&:last-child
+			margin-bottom: 0
+	&__field
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		&--order-md-1
+			@media (max-width: 900px)
+				order: 0
+		&-half
+			width: 50%
+			& + .form__field-half
+				margin-left: -1px
+		&-label
+			display: block
+			width: 100%
+			color: rgba($black, .5)
+			font-size: 14px
+			font-weight: 400
+			line-height: 16px
+			margin-bottom: 5px
+		&-input[type="text"], &-input[type="password"], &-input[type="email"]
+			width: 100%
+			height: 36px
+			padding: 0 10px
+			color: $black;
+			font: 14px/36px 'Roboto';
+			border: 1px solid #e0e0e0;
+			border-radius: 0
+			outline: none
+		//&-submit
+	&__all-params, &__reset
+		background: none
+		padding: 0
+		user-select: none
+		border: none
+		outline: none
+		cursor: pointer
+		margin-right: 17px
+		margin-bottom: 10px
+	&__all-params, &__save-result
+		color: #1a1715
+		border-bottom: 1px dotted #1a1715
+	&__reset
+		color: rgba($black, .5)
+		border-bottom: 1px dotted rgba($black, .5)
+	&__all-params, &__reset, &__save-result
+		display: inline-block
+		vertical-align: top
+		position: relative
+		font-size: 14px
+		line-height: 16px
+		white-space: nowrap
+		transition: border .5s
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			background-repeat: no-repeat
+			background-position: 50% 50%
+		&:hover
+			border-bottom-color: transparent
+	&__save-result
+		margin-bottom: 10px
+		margin-left: auto
+		margin-right: 30px
+		&:after
+			top: -1px
+			right: -30px
+			width: 19px
+			height: 18px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASBAMAAABLIvhaAAAAElBMVEUAAAAsLFIsLFIsLFIsLFIsLFJpDuKoAAAABXRSTlMAfFpXXBWOZL8AAABJSURBVAjXYwgFg0AGIAiFAAEQEwhZA0wD4UxmoDCUyaAaCGSCVAcwMAGFoUwG1wAgEwJYcTIhlgRgMEHSUCZraCgmE6EABpCZAD00IeSvkR9PAAAAAElFTkSuQmCC')
+	&__all-params
+		&:after
+			top: 4px
+			right: -16px
+			width: 5px
+			height: 5px
+			border-right: 2px solid $black
+			border-bottom: 2px solid $black
+			transform: rotate(45deg)
+	&__reset
+		margin-left: 35px
+		&:first-child
+			margin-left: 0
+		&:after
+			top: 3px
+			right: -17px
+			width: 10px
+			height: 10px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAMFBMVEUAAACpqampqampqampqampqampqampqampqampqampqampqampqampqampqampqanyKShJAAAAEHRSTlMA/nmZh21g2FOyp6MG4q2LLHTfOgAAADtJREFUCNdjuMTAwODO4BjAwCTEwCzGEPiBgWFjmzBQkE9wA5A8KTgHSC7skGIAySYagFSyijAUAQXVAT4hCdjeiKFDAAAAAElFTkSuQmCC')
