@@ -115,4 +115,70 @@
 			});
 		}
 	}).init();
+
+	window.reginas.form = ({
+			maxValInputs: function maxValInputs() {
+				var maxValInputs = document.querySelectorAll(".js-input-numb");
+				var _loop = function _loop(maxValInput) {
+					var plus = maxValInput.nextElementSibling.nextElementSibling,
+						minus = maxValInput.nextElementSibling,
+						max = maxValInput.getAttribute("data-max"),
+						min = maxValInput.getAttribute("data-min");
+					if (!maxValInput.getAttribute("data-init")) {
+						maxValInput.addEventListener("keydown", function (e) {
+							var validArr = [46, 8, 9, 27, 13, 110, 190];
+							if (validArr.indexOf(e.keyCode) !== -1 || e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode >= 35 && e.keyCode <= 39) {
+								return
+							}
+							if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+								e.preventDefault()
+							}
+						});
+						maxValInput.addEventListener("focusout", function (e) {
+							if (+maxValInput.value > +max) maxValInput.value = max;
+							if (+maxValInput.value < +min) maxValInput.value = min;
+							var eventChange = new Event("change");
+							maxValInput.dispatchEvent(eventChange)
+						});
+						plus.addEventListener("click", function () {
+							if (+maxValInput.value < +max) maxValInput.value = +maxValInput.value + 1;
+							var eventChange = new Event("change");
+							maxValInput.dispatchEvent(eventChange)
+						});
+						minus.addEventListener("click", function () {
+							if (+maxValInput.value > +min) maxValInput.value = +maxValInput.value - 1;
+							var eventChange = new Event("change");
+							maxValInput.dispatchEvent(eventChange)
+						})
+					}
+					maxValInput.setAttribute("data-init", 1);
+				};
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+				try {
+					for (var _iterator = maxValInputs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var maxValInput = _step.value;
+						_loop(maxValInput)
+					}
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion && _iterator.return) {
+							_iterator.return()
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError
+						}
+					}
+				}
+			},
+		init: function() {
+			var _th = this;
+			this.maxValInputs();
+		}
+	}).init();
 });

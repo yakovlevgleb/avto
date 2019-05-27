@@ -1,0 +1,64 @@
+.inputnumb
+	display: flex
+	flex-direction: row
+	input.inputnumb__input
+		order: 2
+		text-align: center
+		height: 56px
+		border: none
+		border-top: 1px solid #e2e2e2
+		border-bottom: 1px solid #e2e2e2
+		box-shadow: none
+		font-size: 16px
+		line-height: 20px
+		font-weight: 500 !important
+		color: $black
+		padding: 0
+		width: 100%
+
+
+	&__plus
+		height: 56px
+		width: 56px
+		background-color: $blue
+		border: none
+		box-shadow: none
+		position: relative
+		order: 3
+		cursor: pointer
+		outline: none
+		flex-shrink: 0
+		padding: 0
+
+		&:before
+			content: ''
+			position: absolute
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 12px
+			height: 12px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBRsRIQpiUqnYAAAAIklEQVQY02P8zwAH/xkYGBhhHCYGHICKEoz//5OsYwCdCwCeQgYScSZTJQAAAABJRU5ErkJggg==')
+
+	&__minus
+		height: 56px
+		width: 56px
+		background-color: $blue
+		border: none
+		box-shadow: none
+		position: relative
+		order: 1
+		cursor: pointer
+		outline: none
+		flex-shrink: 0
+		padding: 0
+
+		&:before
+			content: ''
+			position: absolute
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 12px
+			height: 2px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAACAQAAAABEBAA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAd2KE6QAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBRsRITJKUBFGAAAADklEQVQI12P4/4Hh/wcAC68D32xqrK0AAAAASUVORK5CYII=')

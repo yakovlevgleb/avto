@@ -1,8 +1,13 @@
 .lotcard
+	.iseo
+		max-width: 790px
+		margin-bottom: 64px
+
 	&__topinfo
 		display: flex
 		flex-direction: row
 		justify-content: space-between
+		margin-bottom: 31px
 
 	&__topinfo-element
 		width: calc(100% / 3)
@@ -23,3 +28,41 @@
 		margin-bottom: 0
 
 		color: $black
+
+	&__bet
+		display: flex
+		flex-direction: row
+		margin-bottom: 66px
+
+	&__bet-left
+		width: calc(100% - 276px - 20px)
+		margin-right: 20px
+		border: 1px solid #e2e2e2
+		display: flex
+		flex-direction: row
+
+	&__bet-elem
+		width: calc(100% / 3)
+		border-right: 1px solid #e2e2e2
+		text-align: center
+		padding: 34px 0
+		font-size: 16px
+		line-height: 20px
+		color: $black
+
+		&:last-child
+			border-right: none
+
+	&__bet-cost
+		font-size: 24px
+		line-height: 32px
+		color: $black
+
+	&__bet-right
+		width: 276px;
+
+		.inputnumb
+			margin-bottom: 10px
+		.btn
+			width: 100%
+			line-height: 56px
