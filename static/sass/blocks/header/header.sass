@@ -1,0 +1,291 @@
+.header
+	margin-bottom: 0
+
+	&__top
+		background-color: $blue
+		.container-1
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+
+	&__main
+		background-color: $white
+		.container-1
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			padding-top: 13px
+			padding-bottom: 8px
+
+	&__city
+		display: flex
+		flex-direction: row
+
+		.jq-selectbox
+			display: flex
+			flex-direction: column
+			width: 142px
+
+		.jq-selectbox__select
+			height: auto
+			border: none
+			border-radius: 0
+			background-color: transparent
+			line-height: 42px
+			padding-right: 25px
+
+		.jq-selectbox__select-text
+			color: $white
+			border-bottom: 1px dotted $white
+			font-size: 14px
+			line-height: 1
+			align-self: center
+			width: auto
+			display: inline-block
+			vertical-align: middle
+			margin-top: -2px
+
+		.jq-selectbox__trigger
+			display: none
+
+		.jq-selectbox__dropdown
+			top: 42px
+			border: 1px solid $blue
+
+		.jq-selectbox li,
+		.jq-select-multiple li
+			padding-left: 20px
+			padding-right: 20px
+
+		.jq-selectbox li.selected
+			background-color: transparent
+			color: #231F20
+
+		.jq-selectbox li:hover,
+		.jq-selectbox li:focus
+			background-color: $red
+
+	&__city-label
+		position: relative
+		padding-left: 25px
+		color: $white
+		font-size: 14px
+		line-height: 42px
+		margin-right: 7px
+
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 15px
+			height: 13px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAQAAADcF/zKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAkSEgy6bGEgAAAA6ElEQVQY02WQMUoDARBFX9w0GouAyGK9qGXSCTlDahs7sUkhiJ0n0MrGtVEs0lgLok1ygTQSBCFIRDClIEKybGN4FptkF/KnGf5n3gyDLKppz297NnMvDxvmaizHHXXgqQO1M3dXmCsE+lzSn/WZFtNtdeqHU7W9DA8Lu8MiPKBGnYSLGfCchDo1ggx+rWpiZKzGRk5UjaUM/PBLlTWG7PPOC10qAKRQcpMDXllni21SutywA0CLEZ8lD7mjRZU93kipMGKVkEc2eOA4e8eJT4W778UzVZ/LRIyZ8MUYgIAhV9xyRMofu/8HaLrP8XDY3AAAAABJRU5ErkJggg==')
+
+	&__tel
+		font-size: 23px
+		font-weight: normal
+		line-height: 23px
+		color: $black
+		display: inline-block
+		margin-bottom: 9px
+
+	&__info
+		text-align: right
+
+	&__adress
+		&--mobile
+			display: none
+		.jq-selectbox
+			display: flex
+			flex-direction: column
+			width: 236px
+
+		.jq-selectbox__select
+			height: auto
+			border: none
+			border-radius: 0
+			background-color: transparent
+			line-height: 1
+			padding-right: 25px
+
+		.jq-selectbox__select-text
+			color: #7d7d7d
+			border-bottom: 1px dotted #7d7d7d
+			font-size: 14px
+			line-height: 1
+			align-self: center
+			width: auto
+			display: inline-block
+			vertical-align: middle
+
+		.jq-selectbox__dropdown
+			top: 27px
+			right: 0
+			border: 1px solid $blue
+			max-width: 210px
+
+		.jq-selectbox li,
+		.jq-select-multiple li
+			padding-left: 20px
+			padding-right: 20px
+			text-align: left
+
+		.jq-selectbox li.selected
+			background-color: transparent
+			color: #231F20
+
+		.jq-selectbox li:hover,
+		.jq-selectbox li:focus
+			background-color: $red
+
+		.jq-selectbox__trigger
+			width: 11px
+			height: 7px
+			top: 50%
+			transition: .5s transform
+			transform: translateY(-50%) rotate(0)
+
+		.jq-selectbox__trigger .jq-selectbox__trigger-arrow
+			position: static
+			border: none
+			width: 11px
+			height: 7px
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAMAAADpsEdvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAASFBMVEUsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFL///8dxRfoAAAAFnRSTlMAHb0eHNsZ2fbaGhfXxBgV1McPyzERghD51wAAAAFiS0dEFwvWmI8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAwLIAvtUcg/AAAAQ0lEQVQI1y2LSRKAIBDE2hFENoEB+v9PFZecUpUKsNhkx4+xtObTw/GkD4/GxHxlpgiUyqbQxlog7LqqdgqGzPeaMm5SqgKFvm+wMwAAAABJRU5ErkJggg==')
+
+		.jq-selectbox.dropdown.opened .jq-selectbox__trigger
+			transform: translateY(-50%) rotate(180deg)
+
+	&__burger
+		z-index: 101
+
+		position: relative
+
+		display: none
+
+		width: 40px
+		height: 24px
+		padding: 0
+
+		cursor: pointer
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+
+		border: none
+		outline: none
+		background: none
+
+		i
+			position: absolute
+			top: auto
+			bottom: 0
+
+			display: block
+
+			width: 40px
+			height: 4px
+			margin-top: -2px
+
+			transition-delay: 0.13s
+			transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			transition-duration: 0.13s
+
+			background-color: $blue
+
+			&:before,
+			&:after
+				position: absolute
+
+				display: block
+
+				width: 40px
+				height: 4px
+
+				content: ""
+				transition-timing-function: ease
+				transition-duration: 0.15s
+				transition-property: transform
+
+				background-color: $blue
+
+			&:before
+				top: -10px
+
+				transition: top 0.12s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+				background-color: $blue
+
+			&:after
+				top: -20px
+				bottom: -10px
+
+				transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, opacity 0.1s linear
+
+				background-color: $blue
+
+		&--active
+			i
+				transition-delay: 0.22s
+				transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+				transform: translate3d(0, -10px, 0) rotate(-45deg)
+
+				background-color: $blue
+
+				&:before,
+				&:after
+						background-color: $blue
+
+				&:before
+						top: 0
+
+						transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.16s, transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s
+						transform: rotate(-90deg)
+
+				&:after
+						top: 0
+
+						transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s linear 0.22s
+
+						opacity: 0
+
+@media (max-width: 1010px)
+	.nav
+		display: none
+
+	.header
+		&__info
+			margin-right: 30px
+			margin-left: auto
+		&__burger
+			display: block
+
+@media (max-width: 450px)
+	.header
+		&__tel
+			display: none
+
+		&__adress
+			display: none
+
+			&--mobile
+				display: block
+				margin-bottom: 20px
+
+				.jq-selectbox
+					margin: 0 auto
+					width: 186px
+
+				.jq-selectbox__select
+					padding-left: 0
+					padding-right: 0
+
+				.jq-selectbox__dropdown
+					width: 210px
+					left: -19px
+
+				.jq-selectbox__trigger
+					display: none

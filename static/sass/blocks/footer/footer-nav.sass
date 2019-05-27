@@ -1,0 +1,47 @@
+.footer-nav
+	padding-top: 44px
+	padding-bottom: 45px
+	margin-bottom: 44px
+	border-bottom: 1px solid rgba(255,255,255,.2)
+
+	&__list
+		display: flex
+		flex-direction: row
+
+	&__item
+		margin-right: 41px
+
+		&:last-child
+			margin-right: 0
+
+		&.active
+			.footer-nav__link
+				color: $redonblue
+
+	&__link
+		font-size: 14px
+		line-height: 20px
+		color: $white
+		font-weight: bold
+		text-transform: uppercase
+		transition: .5s color
+
+		&:hover
+			color: $redonblue
+
+@media (max-width: 650px)
+	.footer-nav
+		&__item
+			margin-right: 15px
+
+@media (max-width: 510px)
+	.footer-nav
+		&__list
+			display: flex
+			flex-direction: column
+
+		&__item
+			margin-bottom: 20px
+
+			&:last-child
+				margin-bottom: 0

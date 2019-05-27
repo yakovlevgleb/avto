@@ -1,0 +1,94 @@
+.ovh
+	overflow: hidden
+	position: fixed
+
+.btn
+	color: $white
+	background-color: $red
+	line-height: 36px
+	font-size: 14px
+	font-weight: bold
+	padding: 0 19px
+	border-radius: 0
+	border: none
+	box-shadow: none
+	white-space: nowrap
+	transition: .5s background-color, .5s color
+
+	&:hover
+		background-color: $dark-red
+
+	&--white
+		background-color: transparent
+		color: $red
+		border: 2px solid $red
+
+		&:hover
+			background-color: $red
+			color: $white
+
+.swiper-button-prev, .swiper-button-next
+	width: 60px
+	height: 60px
+	background-color: rgba(255,255,255,.16)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: auto
+	transition: background-image .8s
+
+.swiper-button-prev
+	left: 200px
+
+.swiper-button-next
+	right: 200px
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev,
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAhCAQAAAB+KTPfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAoQKgJbeotcAAABlUlEQVQ4y3WUTShEURiGn3vFYqRhMQt1SzQbQkmJWGiYyU+xkI2ysBERYUUpUazkp4QSC2UjC38NE1mIEguykEhqZiPEbEaUWPjmGObcb/W8333uz/nO7RjBHBbJZI4hvtCUBRjBY0oAmKbbTjLJktTFKDZl4lfcz6Cd1MGRSsP06KUItZypPE6rToIw1VxKNpilWSfBE15uVGeJBp0ED3i4F05ghRqdBCG8hISTWMWjk+AWH4/CDjZkyP8kuMLLq3Ayfgp1ElxQRVjYiZ88nQQn1BERdhEIucEI6kbsY5MktaBSvQT1rJIofGjqHdaZUlxsJ1XSqfhc/7oydnEIP1Kqe1IRW0p5psK6iZfy2cEpHKbauoyfUzZ7pAlHqOU0fphuAriE36iL/rOxksUelvAHjexHL/xK6RyQIfxJE9u/d0clFwHcSmlhLfYrfiQnu+RK54s2lv+uxgRS2KFAdXpY+D8VEwcbFKs8ELNnMdIM5SqNMKbbJSP4QqrwBL3xws+BcSdpnj5syqSVa96ZpF1/PgF8A1zgWt6v4DeXAAAAAElFTkSuQmCC')
+
+	&:hover
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAhCAMAAADj/gtmAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA5FBMVEUsLFL///8sLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFL///8mnXh7AAAASnRSTlMAADLV8X8B0Iz4gKV0D8hsEP5hFdb8WBzb+k8f4/lHJOf1PyzqN/AwOfMqQeVJ4VK4kve8Rh4t7/TkHRnTWs5kDMduonmC0Y40h5ICrrkAAAABYktHRAH/Ai3eAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wQKEC4E1nXrbQAAAOxJREFUKM9V0ltDgkAQBeCRMLOytCQUIQUvECiUXdTSbpbp/v8fFDMve3Yfv4fd2XOGrCO7ekz6VCpUU0qdmFQvSZ0adMakzpEaF2KXQNTk21TrCoiu22zODRC5HbauB0Q9ny24BaL+gC2MgGg4YrPHQGRN2CYxECV3bKMUiLKQbdoHolnAlrtAVDhs90j0wDRH8bpMjyBPcpf/rCWSFwfw4tiWuV70XPFCprf09Kn8cZlAEitJItNJvOaS10zn9SapOgVkvxbZ6Owb79LQh27o80t6/IYetyI/2PaS5dfYiV0pf+bm7DvhwdyvfxHmNAs190+TAAAAAElFTkSuQmCC')
+
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next
+	transform: rotate(180deg)
+
+
+.swiper-pagination-bullet
+	width: 15px
+	height: 15px
+	border: 1px solid $white
+	border-radius: 0
+	background-color: transparent
+	opacity: 1
+	transition: .5s background-color
+
+.swiper-pagination-bullet:hover
+	background-color: $white
+
+.swiper-pagination-bullet-active
+	background-color: $white
+
+.ibanner
+	margin-bottom: 50px
+
+	img
+		max-width: 100%
+
+.ovh
+	position: fixed
+	overflow: hidden
+
+@media (max-width: 1280px)
+	.container-1
+		width: 1024px
+
+@media (max-width: 1070px)
+	body
+		min-width: inherit
+
+	.container-1
+		width: 100%

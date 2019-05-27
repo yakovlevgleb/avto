@@ -1,0 +1,100 @@
+.hero
+	margin-bottom: 60px
+	&__slide
+		padding-top: 80px
+		padding-bottom: 90px
+		height: 485px
+
+		.container-1
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: center
+
+	&__title
+		font-size: 68px
+		line-height: 68px
+		font-weight: 800
+		color: $white
+		margin-bottom: 36px
+		max-width: 860px
+
+	&__text
+		font-size: 23px
+		line-height: 23px
+		color: $white
+		font-weight: bold
+		max-width: 600px
+
+@media (max-width: 1800px)
+	.hero
+		.swiper-button-next
+			right: 150px
+
+		.swiper-button-prev
+			left: 150px
+
+@media (max-width: 1660px)
+	.hero
+		.swiper-button-next
+			right: 100px
+
+		.swiper-button-prev
+			left: 100px
+
+@media (max-width: 1550px)
+	.hero
+		.swiper-button-next
+			right: 50px
+
+		.swiper-button-prev
+			left: 50px
+
+@media (max-width: 1450px)
+	.hero
+		.swiper-button-next
+			right: 10px
+
+		.swiper-button-prev
+			left: 10px
+
+		.swiper-button-prev, .swiper-button-next
+			width: 21px
+			background-color: transparent
+
+@media (max-width: 1300px)
+	.hero
+		.swiper-button-prev,
+		.swiper-button-next
+			display: none
+
+@media (max-width: 1010px)
+	.hero
+		&__title
+			font-size: 48px
+			line-height: 52px
+			max-width: inherit
+
+		&__text
+			font-size: 18px
+			line-height: 20px
+			max-width: inherit
+
+@media (max-width: 767px)
+	.hero
+		&__slide
+			padding-top: 30px
+			padding-bottom: 35px
+			height: 300px
+
+		&__title
+			font-size: 28px
+			line-height: 32px
+			margin-bottom: 20px
+
+		&__text
+			font-size: 16px
+			line-height: 18px
+
+		.swiper-container-horizontal > .swiper-pagination-bullets
+			bottom: 15px

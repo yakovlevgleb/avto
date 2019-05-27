@@ -1,0 +1,85 @@
+mixin header
+	header.header&attributes(attributes)
+		.header__top
+			.container-1
+				.header__city
+					p.header__city-label Ваш город:
+					select
+						option(value="1") Магнитогорск
+						option(value="2") Челябинск
+						option(value="3") Миасс
+						option(value="4") Екатеринбург
+				nav.top-nav
+					ul.top-nav__list
+						li.top-nav__item.active
+							a(href="#").top-nav__link Кредит и рассрочка
+						li.top-nav__item
+							a(href="#").top-nav__link Отзывы
+						li.top-nav__item
+							a(href="#").top-nav__link Контакты
+						li.top-nav__item
+							a(href="#").top-nav__link Утилизация
+						li.top-nav__item
+							a(href="#").top-nav__link Акции
+						li.top-nav__item
+							a(href="#").top-nav__link Trade in
+
+				.header-links
+					.header-links__over
+						a(href="#").header-links__link Вход
+						a(href="#").header-links__link Регистрация
+					a(href="#").btn.header-links__btn Обратный звонок
+
+		.header__main
+			.container-1
+				.logo
+					a(href="#").logo__link
+						img(src="./img/logo.png", alt="").logo__img
+				nav.nav
+					.header__adress.header__adress--mobile
+						select
+							option(value="1") ул. Бр. Кашириных 141А
+							option(value="2") Свердловский тракт 5Р
+					ul.nav__mobile.nav__mobile--user
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Вход
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Регистрация
+
+					ul.nav__list
+						li.nav__item.active
+							a(href="#").nav__link Каталог
+						li.nav__item
+							a(href="#").nav__link Кредит
+						li.nav__item
+							a(href="#").nav__link Выкуп
+						li.nav__item
+							a(href="#").nav__link Комиссия
+						li.nav__item
+							a(href="#").nav__link Обмен
+						li.nav__item
+							a(href="#").nav__link О компании
+
+					ul.nav__mobile
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Кредит и рассрочка
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Отзывы
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Контакты
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Утилизация
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Акции
+						li.nav__mobile-elem
+							a(href="#").nav__mobile-link Trade in
+
+				.header__info
+					a(href="tel:83512395222").header__tel 8 (351) 239-52-22
+					.header__adress
+						select
+							option(value="1") ул. Бр. Кашириных 141А
+							option(value="2") Свердловский тракт 5Р
+
+				button(type="button").header__burger.js-burger
+					i

@@ -1,0 +1,36 @@
+.top-nav
+	&__list
+		display: flex
+		flex-direction: row
+
+	&__item
+		margin-right: 19px
+
+		&:last-child
+			margin-right: 0
+
+		&.active
+			.top-nav__link
+				color: $redonblue
+				border-color: $redonblue
+
+	&__link
+		font-size: 14px
+		line-height: 40px
+		color: $white
+		font-weight: normal
+		border-bottom: 2px solid transparent
+		display: inline-block
+		transition: .5s color, .5s border-color
+
+		&:hover
+			color: $redonblue
+
+@media (max-width: 1280px)
+	.top-nav
+		&__item
+			margin-right: 15px
+
+@media (max-width: 1010px)
+	.top-nav
+		display: none
