@@ -1,0 +1,32 @@
+include blocks/blocks
+
+doctype html
+html(lang="ru")
+	+head
+	body
+		+header
+		main.main
+			.title
+				.container-1
+					+breadcrumbs
+					h1 XRAY CROSS
+
+			.container-1
+				+preview-slider
+
+				.iseo
+					ul.iseo__banners
+						li.iseo__banners-item
+							a(href="#").iseo__banners-overimg
+								img(src="./img/iseo-img-1.jpg" alt="").iseo__banners-img
+						li.iseo__banners-item
+							a(href="#").iseo__banners-overimg
+								img(src="./img/iseo-img-2.jpg" alt="").iseo__banners-img
+						li.iseo__banners-item
+							a(href="#").iseo__banners-overimg
+								img(src="./img/iseo-img-3.jpg" alt="").iseo__banners-img
+
+		+footer
+		+hidden-blocks
+		+scripts
+

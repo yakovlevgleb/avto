@@ -73,6 +73,11 @@
 				});
 			}
 
+			$(".js-form-reset").on('click', function (e) {
+				$(this).parents('form')[0].reset();
+				e.preventDefault();
+			});
+
 		}
 	}).init();
 
