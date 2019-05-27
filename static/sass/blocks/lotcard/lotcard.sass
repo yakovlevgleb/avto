@@ -1,0 +1,25 @@
+.lotcard
+	&__topinfo
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+	&__topinfo-element
+		width: calc(100% / 3)
+		display: flex
+		flex-direction: row
+		padding-right: 50px
+
+	&__topinfo-icon
+		align-self: flex-start
+		flex-shrink: 0
+		margin-right: 14px
+		margin-top: 5px
+
+	&__topinfo-text,
+	&__topinfo-text p:not([class])
+		font-size: 16px
+		line-height: 24px
+		margin-bottom: 0
+
+		color: $black

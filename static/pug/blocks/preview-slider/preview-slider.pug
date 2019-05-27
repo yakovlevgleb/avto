@@ -1,0 +1,22 @@
+mixin preview-slider
+	section.preview-slider
+		.swiper-container.preview-slider__main.js-preview-main
+			.swiper-wrapper
+				.swiper-slide(style="background-image:url(./img/lotcard/img-1.jpg)")
+				.swiper-slide(style="background-image:url(./img/lotcard/img-2.jpg)")
+				.swiper-slide(style="background-image:url(./img/lotcard/img-3.jpg)")
+				.swiper-slide
+					video(src="https://www.w3schools.com/tags/movie.mp4" controls)
+				.swiper-slide(style="background-image:url(./img/lotcard/img-5.jpg)")
+			.swiper-button-next
+			.swiper-button-prev
+
+		.swiper-container.preview-slider__thumbs.js-preview-thumbs
+			.swiper-wrapper
+				.swiper-slide.preview-slider__thumbs-elem(style="background-image:url(./img/lotcard/img-1.jpg)")
+				.swiper-slide.preview-slider__thumbs-elem(style="background-image:url(./img/lotcard/img-2.jpg)")
+				.swiper-slide.preview-slider__thumbs-elem(style="background-image:url(./img/lotcard/img-3.jpg)")
+				.swiper-slide.preview-slider__thumbs-elem.preview-slider__thumbs-elem--video(style="background-image:url(./img/lotcard/img-4.jpg)")
+
+				.swiper-slide.preview-slider__thumbs-elem.preview-slider__thumbs-elem--more(style="background-image:url(./img/lotcard/img-5.jpg)")
+					span.preview-slider__thumbs-count Еще 14 фото

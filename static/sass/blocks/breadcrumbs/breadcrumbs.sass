@@ -1,0 +1,46 @@
+.breadcrumbs
+	display: flex
+	flex-direction: row
+
+	padding-left: 20px
+	flex-shrink: 0
+	margin-bottom: 8px
+
+	&__href
+		position: relative
+
+		margin-right: 25px
+
+		color: $breacrumbs
+
+		font-size: 14px
+		font-weight: normal
+		line-height: 20px
+		opacity: 1
+
+		&:last-child
+			margin-right: 0
+
+			&:before
+				content: none
+
+		&:before
+			position: absolute
+			top: 0px
+			right: -17px
+
+			font-size: 14px
+			font-weight: normal
+			line-height: 20px
+
+			color: $breacrumbs
+
+			content: '/'
+
+	& a
+		transition: border-color 0.5s
+
+		border-bottom: 1px solid $breacrumbs
+
+		&:hover
+			border-color: transparent

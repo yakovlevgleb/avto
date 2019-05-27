@@ -28,6 +28,29 @@
 				},
 			});
 
+			var galleryThumbs = new Swiper('.js-preview-thumbs', {
+				spaceBetween: 0,
+				slidesPerView: 4,
+				loop: false,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				direction: 'vertical',
+				touchRatio: 0
+			});
+
+			var galleryTop = new Swiper('.js-preview-main', {
+				spaceBetween: 10,
+				loop: false,
+				navigation: {
+					nextEl: '.js-preview-main .swiper-button-next',
+					prevEl: '.js-preview-main .swiper-button-prev'
+				},
+				thumbs: {
+					swiper: galleryThumbs
+				},
+			});
+
 		}
 	}).init();
 

@@ -1,0 +1,31 @@
+include blocks/blocks
+
+doctype html
+html(lang="ru")
+	+head
+	body
+		+header
+		main.main
+			.title
+				.container-1
+					+breadcrumbs
+					h1 Лот № 92663 Ford Mondeo
+			section.lotcard
+				.container-1
+					.lotcard__topinfo
+						.lotcard__topinfo-element
+							img(src="./img/lotcard/icon-1.png", alt="").lotcard__topinfo-icon
+							.lotcard__topinfo-text
+								p 2004 г.в., 241 534 км, Универсал, СVT, Бензин Инжектор, 150 лс
+						.lotcard__topinfo-element
+							img(src="./img/lotcard/icon-2.png", alt="").lotcard__topinfo-icon
+							.lotcard__topinfo-text
+								p Регинас Профи, Екатеринбург, ул. Высоцкого, 3с
+						.lotcard__topinfo-element
+							.timer
+								span До конца аукциона:
+								time 02:27:59
+					+preview-slider
+		+footer
+		+hidden-blocks
+		+scripts
