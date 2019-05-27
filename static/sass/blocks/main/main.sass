@@ -1,0 +1,59 @@
+.main
+	padding-bottom: 100px
+	&__row
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+	&__aside
+		width: 276px
+		flex-shrink: 0
+		@media (max-width: 767px)
+			width: 100%
+			margin-bottom: 35px
+	&__right
+		width: calc(100% - 308px)
+		margin-left: 32px
+		@media (max-width: 767px)
+			margin-left: 0
+			width: 100%
+		.form--filter
+			.form
+				&__row
+					@media (max-width: 900px)
+						&:first-child
+							.form__field
+								&:nth-child(2)
+									margin-bottom: 0
+								&:not(.form__field--order-md-1)
+									order: 1
+				&__field
+					@media (max-width: 900px)
+						width: 100%
+						margin-bottom: 20px
+						&:last-child
+							margin-bottom: 0
+	&__nav
+		padding: 30px 30px 10px
+		background-color: whitesmoke
+		@media (max-width: 600px)
+			padding: 20px 15px 10px
+		&-title
+			color: #1a1715
+			font-size: 16px
+			font-weight: 700
+		&-list
+			&-item
+				padding: 10px 0
+				border-bottom: 1px solid #e0e0e0
+				&:last-child
+					border-bottom: none
+			&-href
+				color: $black
+				font-size: 14px
+				font-weight: 400
+				line-height: 20px
+				transition: color .5s
+				&:hover, &--active
+					color: $red
+
+

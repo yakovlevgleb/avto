@@ -1,0 +1,85 @@
+.pagination
+	margin-top: 40px
+	display: flex
+	flex-wrap: wrap
+	&--new
+		padding: 0
+		border: 0
+	&__item
+		margin-right: 10px
+		@media (max-width: 600px)
+			margin-right: 5px
+		&:last-child
+			margin-right: 0
+		&--prev, &--next
+			@media (max-width: 600px)
+				display: none
+			.pagination__item-href
+				background: none
+				transition: opacity .5s
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 11px
+					width: 12px
+					height: 12px
+					border-right: 2px solid $black
+					border-bottom: 2px solid $black
+				&:hover
+					background: none
+					opacity: .7
+		&--prev
+			margin-left: -10px
+			.pagination__item-href
+				&:before
+					left: 15px
+					transform: rotate(135deg)
+		&--next
+			.pagination__item-href
+				&:before
+					right: 15px
+					transform: rotate(-45deg)
+		&-spacer
+			display: flex
+			align-items: flex-end
+			justify-content: center
+			width: 36px
+			height: 36px
+			padding-bottom: 6px
+			@media (max-width: 600px)
+				width: 23px
+				height: 23px
+			span
+				color: $black
+				font-size: 16px
+				line-height: 18px
+		&-href
+			display: flex
+			align-items: center
+			justify-content: center
+			position: relative
+			width: 36px
+			height: 36px
+			background-color: $white
+			transition: background .5s
+			@media (max-width: 600px)
+				width: 23px
+				height: 23px
+			span
+				color: $black
+				font-size: 16px
+				line-height: 18px
+				border-bottom: 1px solid $black
+				transition: border .35s, color .5s
+			&--active, &:hover
+				background-color: $red
+				span
+					color: #fff
+					border-bottom-color: transparent
+			&--disable
+				opacity: .3
+				pointer-events: none
+				cursor: default
+				&:hover
+					opacity: .3
