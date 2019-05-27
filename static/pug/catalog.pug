@@ -1,0 +1,427 @@
+include blocks/blocks
+
+doctype html
+html(lang="ru")
+	+head
+	body
+		+header
+		main.main
+			.container-1
+				.main__row
+					aside.main__aside
+						nav.main__nav
+							p.main__nav-title Спецпредложения
+							ul.main__nav-list
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Vesta
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Kalina. Kalina CROSS и Kalina CROSS
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Lada 4x4
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Lada Granta и Granta Sport
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Largus и Largus Cross
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href Priora
+								li.main__nav-list-item
+									a(href="#").main__nav-list-href LADA XRAY
+					.main__right
+						.filter-inside
+							form.form.form--filter
+								.form__row
+									.form__field
+										label.form__field-label Город
+										select.form__field-select.js-select
+											option Все
+											option Москва
+											option Санк-Петербург
+											option Челябинск
+									.form__field
+										label.form__field-label Площадка
+										select.form__field-select.js-select
+											option Все
+											option Регинас Профи
+											option Регинас Профи 2
+											option Регинас Профи длинное название
+									.form__field.form__field--order-md-1
+										a(href="#").form__save-result Сохранить поиск
+								.form__row
+									.form__field
+										label.form__field-label Уникальный идентификатор
+										select.form__field-select.js-select
+											option Уникальный идентификатор
+											option Уникальный идентификатор2
+											option Уникальный идентификатор3
+									.form__field
+										label.form__field-label Марка
+										select.form__field-select.js-select
+											option LADA (ВАЗ)
+											option LADA (ВАЗ) 2
+											option LADA (ВАЗ) 3
+									.form__field
+										label.form__field-label Модель
+										select.form__field-select.js-select
+											option Калина
+											option Ларгус
+											option Веста
+											option Приора
+											option Нива
+								.form__row
+									.form__field
+										label.form__field-label Коробка
+										select.form__field-select.js-select
+											option Автомат(роботизированный)
+											option Механика
+									.form__field
+										label.form__field-label Двигатель
+										select.form__field-select.js-select
+											option 1.4л
+											option 1.6л
+											option 1.8л
+									.form__field
+										label.form__field-label Пробег, км
+										input(type="text" id="inp_01").form__field-input
+								.form__row
+									.form__field
+										label.form__field-label Мощность, лс
+										input(type="text" id="inp_02").form__field-input
+									.form__field
+										label.form__field-label Год выпуска
+										.form__field-half
+											select.form__field-select.js-select
+												option от
+												option 1990
+												option 1991
+												option 1992
+												option 1993
+												option 1994
+												option 1995
+										.form__field-half
+											select.form__field-select.js-select
+												option до
+												option 1990
+												option 1991
+												option 1992
+												option 1993
+												option 1994
+												option 1995
+									.form__field
+										label.form__field-label Цена, Р
+										.form__field-half
+											input(type="text" id="inp_03" placeholder="от").form__field-input
+										.form__field-half
+											input(type="text" id="inp_04" placeholder="до").form__field-input
+								.form__row.form__row--action
+									.form__row-left
+										button(type="button").form__all-params.js-all-params  Все параметры
+										button(type="button").form__reset.js-form-reset  Сбросить
+									button(type="submit").form__submit.btn Показать 3456 предложений
+
+					section.icatalog.icatalog--inside
+						.icatalog__list
+							.icatalog__element
+								.icatalog__photos
+									.swiper-container.js-catalog-slider
+										.swiper-wrapper
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-1.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-1.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+										.swiper-pagination
+
+								.icatalog__info
+									.icatalog__info-top
+										.icatalog__info-col.icatalog__info-col--45per
+											a(href="#").icatalog__car Mercedes GLE 350
+											p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+											p.icatalog__char Автомат / Бензин
+										.icatalog__info-col.icatalog__info-col--35per
+											p.icatalog__cost 2 248 800 руб
+											p.icatalog__old-cost 2 645 000 руб
+											.icatalog__credit от 14 768 Р/мес
+												.icatalog__credit-modal
+													.icatalog__credit-over
+														p.icatalog__credit-title Заголовок поясняющий условия кредитования
+														.icatalog__credit-text
+															p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+										p.icatalog__year 2017 г.
+										p.icatalog__run 78 951 км
+
+									.icatalog__info-bottom
+										.icatalog__autocenter Регинас Профи, Екатеринбург
+											p.icatalog__autocenter-adress ул. Высоцкого, 3
+										a(href="#").btn.icatalog__btn Оставить заявку
+							.icatalog__element
+								.icatalog__photos
+									.swiper-container.js-catalog-slider
+										.swiper-wrapper
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+										.swiper-pagination
+
+								.icatalog__info
+									.icatalog__info-top
+										.icatalog__info-col.icatalog__info-col--45per
+											a(href="#").icatalog__car Mercedes GLE 350
+											p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+											p.icatalog__char Автомат / Бензин
+										.icatalog__info-col.icatalog__info-col--35per
+											p.icatalog__cost 2 248 800 руб
+											p.icatalog__old-cost 2 645 000 руб
+											.icatalog__credit от 14 768 Р/мес
+												.icatalog__credit-modal
+													.icatalog__credit-over
+														p.icatalog__credit-title Заголовок поясняющий условия кредитования
+														.icatalog__credit-text
+															p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+										p.icatalog__year 2017 г.
+										p.icatalog__run 78 951 км
+
+									.icatalog__info-bottom
+										.icatalog__autocenter Регинас Профи, Екатеринбург
+											p.icatalog__autocenter-adress ул. Высоцкого, 3
+										a(href="#").btn.icatalog__btn Оставить заявку
+							.icatalog__element
+								.icatalog__photos
+									.swiper-container.js-catalog-slider
+										.swiper-wrapper
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+										.swiper-pagination
+
+								.icatalog__info
+									.icatalog__info-top
+										.icatalog__info-col.icatalog__info-col--45per
+											a(href="#").icatalog__car Mercedes GLE 350
+											p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+											p.icatalog__char Автомат / Бензин
+										.icatalog__info-col.icatalog__info-col--35per
+											p.icatalog__cost 2 248 800 руб
+											p.icatalog__old-cost 2 645 000 руб
+											.icatalog__credit от 14 768 Р/мес
+												.icatalog__credit-modal
+													.icatalog__credit-over
+														p.icatalog__credit-title Заголовок поясняющий условия кредитования
+														.icatalog__credit-text
+															p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+										p.icatalog__year 2017 г.
+										p.icatalog__run 78 951 км
+
+									.icatalog__info-bottom
+										.icatalog__autocenter Регинас Профи, Екатеринбург
+											p.icatalog__autocenter-adress ул. Высоцкого, 3
+										a(href="#").btn.icatalog__btn Оставить заявку
+							.icatalog__element
+								.icatalog__photos
+									.swiper-container.js-catalog-slider
+										.swiper-wrapper
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+										.swiper-pagination
+
+								.icatalog__info
+									.icatalog__info-top
+										.icatalog__info-col.icatalog__info-col--45per
+											a(href="#").icatalog__car Mercedes GLE 350
+											p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+											p.icatalog__char Автомат / Бензин
+										.icatalog__info-col.icatalog__info-col--35per
+											p.icatalog__cost 2 248 800 руб
+											p.icatalog__old-cost 2 645 000 руб
+											.icatalog__credit от 14 768 Р/мес
+												.icatalog__credit-modal
+													.icatalog__credit-over
+														p.icatalog__credit-title Заголовок поясняющий условия кредитования
+														.icatalog__credit-text
+															p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+										p.icatalog__year 2017 г.
+										p.icatalog__run 78 951 км
+
+									.icatalog__info-bottom
+										.icatalog__autocenter Регинас Профи, Екатеринбург
+											p.icatalog__autocenter-adress ул. Высоцкого, 3
+										a(href="#").btn.icatalog__btn Оставить заявку
+							.icatalog__element
+								.icatalog__photos
+									.swiper-container.js-catalog-slider
+										.swiper-wrapper
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-2.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-slide.icatalog__photos-slide
+												a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+													img(src="./img/catalog-photo-3.jpg", alt="")
+										.swiper-pagination
+
+								.icatalog__info
+									.icatalog__info-top
+										.icatalog__info-col.icatalog__info-col--45per
+											a(href="#").icatalog__car Mercedes GLE 350
+											p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+											p.icatalog__char Автомат / Бензин
+										.icatalog__info-col.icatalog__info-col--35per
+											p.icatalog__cost 2 248 800 руб
+											p.icatalog__old-cost 2 645 000 руб
+											.icatalog__credit от 14 768 Р/мес
+												.icatalog__credit-modal
+													.icatalog__credit-over
+														p.icatalog__credit-title Заголовок поясняющий условия кредитования
+														.icatalog__credit-text
+															p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+										p.icatalog__year 2017 г.
+										p.icatalog__run 78 951 км
+
+									.icatalog__info-bottom
+										.icatalog__autocenter Регинас Профи, Екатеринбург
+											p.icatalog__autocenter-adress ул. Высоцкого, 3
+										a(href="#").btn.icatalog__btn Оставить заявку
+
+							.ibanner
+								a(href="#")
+									img(src="./img/banner-2.jpg" alt="")
+
+							- for (var i = 0; i < 2; i++) {
+								.icatalog__element
+									.icatalog__photos
+										.swiper-container.js-catalog-slider
+											.swiper-wrapper
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-2.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-2.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-pagination
+
+									.icatalog__info
+										.icatalog__info-top
+											.icatalog__info-col.icatalog__info-col--45per
+												a(href="#").icatalog__car Mercedes GLE 350
+												p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+												p.icatalog__char Автомат / Бензин
+											.icatalog__info-col.icatalog__info-col--35per
+												p.icatalog__cost 2 248 800 руб
+												p.icatalog__old-cost 2 645 000 руб
+												.icatalog__credit от 14 768 Р/мес
+													.icatalog__credit-modal
+														.icatalog__credit-over
+															p.icatalog__credit-title Заголовок поясняющий условия кредитования
+															.icatalog__credit-text
+																p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+											p.icatalog__year 2017 г.
+											p.icatalog__run 78 951 км
+
+										.icatalog__info-bottom
+											.icatalog__autocenter Регинас Профи, Екатеринбург
+												p.icatalog__autocenter-adress ул. Высоцкого, 3
+											a(href="#").btn.icatalog__btn Оставить заявку
+
+							- }
+
+				+pagination
+
+				.iseo
+					.iseo__row
+						.iseo__left
+							.iseo__text
+								h3 Обзор LADA XRay CROSS
+								p АВТОВАЗ — российская автомобилестроительная компания, входящая в альянс Renault-Nissan и подконтрольная ему. Возникла в СССР в 1971 году, когда и был выпущен первый автомобиль ВАЗ-2101. Завод выпускал другие модели автомобиля «ВАЗ», а также «Жигули», «Нива», «Спутник», «Самара» и «Ока». В настоящее время выпускается продукция марок «Lada», «Nissan». Планируется в дальнейшем начать производство автомобилей Renault. Под маркой «Lada» выпускаются такие машины, как «Granta», «Priora», «Kalina Новая», «Largus» и «4х4». Все авто доступны по цене и относятся к бюджетной группе автомобилей.
+								p Лада Гранта выпускается в двух вариантах — Lada Granta седан и Lada Granta лифтбек. Существует три комплектации этой модели: стандарт, норма и люкс. Двигатели этой серии имеют объем 1,6 л и 8 либо 16 клапанов. КПП механическая или автоматическая, пятиступенчатая. Подвеска Лады Гранта улучшена по сравнению с предшественниками. Багажное отделение варианта «седан» имеет объем 520 куб. см, а «лифтбэк» - 440 и 760 куб. см в сложенном и разложенном состоянии соответственно.
+								p Лада Приора имеет больше вариантов кузова: седан, хэтчбек, универсал и купе. Багажное отделение имеет объем 430, 360/705, 444/777 и 360/705 куб. см, соответственно. Объем двигателя — 1,6 литров, КПП — пятиступенчатая. Расход топлива у этого модельного ряда составляет 5,5 литров в загородном цикле и 9,4 в городском, при смешанном варианте езды — 6,9 литров на сто километров. Кузов получил очередную серию изменений, которые сделали внешний вид Приоры еще более свежим и оригинальным.
+								p АВТОВАЗ – один из лидеров автомобильной промышленности России. Производственные мощности компании расположены в Тольятти и Ижевске. Технические возможности АВТОВАЗа позволяют выпускать до одного миллиона автомобилей и автокомплектов в год.
+						.iseo__right
+							ul.iseo__banners.iseo__banners--vert
+								li.iseo__banners-item
+									a(href="#").iseo__banners-overimg
+										img(src="./img/iseo-img-1.jpg" alt="").iseo__banners-img
+								li.iseo__banners-item
+									a(href="#").iseo__banners-overimg
+										img(src="./img/iseo-img-2.jpg" alt="").iseo__banners-img
+								li.iseo__banners-item
+									a(href="#").iseo__banners-overimg
+										img(src="./img/iseo-img-3.jpg" alt="").iseo__banners-img
+
+		+footer
+		+hidden-blocks
+		+scripts

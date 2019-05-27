@@ -1,5 +1,20 @@
 .icatalog
 	margin-bottom: 50px
+	&--inside
+		width: 100%
+		margin: 32px 0 0
+		&:first-child
+			margin-top: 0
+		.ibanner
+			margin-bottom: 27px
+			@media (max-width: 970px)
+				display: none
+			&:last-child
+				margin-bottom: 0
+		.icatalog
+			&__element
+				&:last-child
+					margin-bottom: 0
 	&__cities
 		font-size: 23px
 		font-weight: bold
@@ -27,6 +42,10 @@
 		flex-direction: row
 		max-height: 230px
 		margin-bottom: 27px
+		box-shadow: 0 6px 29px rgba(#434355, 0)
+		transition: box-shadow .5s
+		&:hover
+			box-shadow: 0 6px 29px rgba(#434355, .24)
 
 	&__photos
 		max-width: 380px
@@ -52,6 +71,10 @@
 		color: $black
 		font-weight: 500
 		margin-bottom: 10px
+		border-bottom: 1px solid $black
+		transition: border .5s
+		&:hover
+			border-bottom-color: transparent
 
 	&__char
 		font-size: 14px
