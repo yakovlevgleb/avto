@@ -46,21 +46,37 @@
 			transform: translateY(-50%) rotate(180deg)
 	&--filter
 		.form
+			&__row
+				@media (max-width: 767px)
+					&:first-child
+						.form__field
+							&:nth-child(2)
+								margin-bottom: 0
+							&:not(.form__field--order-md-1)
+								order: 1
 			&__field
 				width: calc(100%/3 - 13.3px)
 				@media (max-width: 767px)
 					width: 100%
+					margin-bottom: 20px
+					&:last-child
+						margin-bottom: 0
 			&__submit
 				margin-left: auto
+				min-width: 264px
 				@media (max-width: 900px)
 					margin-left: 0
 					margin-top: 25px
+				@media (max-width: 400px)
+					min-width: 100%
 	&__row
 		display: flex
 		flex-wrap: wrap
 		align-items: flex-end
 		justify-content: space-between
 		margin-bottom: 20px
+		&--hidden
+			display: none
 		&-left
 			@media (max-width: 900px)
 				width: 100%
@@ -96,7 +112,6 @@
 			border: 1px solid #e0e0e0;
 			border-radius: 0
 			outline: none
-		//&-submit
 	&__all-params, &__reset
 		background: none
 		padding: 0
@@ -107,8 +122,8 @@
 		margin-right: 17px
 		margin-bottom: 10px
 	&__all-params, &__save-result
-		color: #1a1715
-		border-bottom: 1px dotted #1a1715
+		color: $black
+		border-bottom: 1px dotted $black
 	&__reset
 		color: rgba($black, .5)
 		border-bottom: 1px dotted rgba($black, .5)
@@ -139,6 +154,10 @@
 			height: 18px
 			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAASBAMAAABLIvhaAAAAElBMVEUAAAAsLFIsLFIsLFIsLFIsLFJpDuKoAAAABXRSTlMAfFpXXBWOZL8AAABJSURBVAjXYwgFg0AGIAiFAAEQEwhZA0wD4UxmoDCUyaAaCGSCVAcwMAGFoUwG1wAgEwJYcTIhlgRgMEHSUCZraCgmE6EABpCZAD00IeSvkR9PAAAAAElFTkSuQmCC')
 	&__all-params
+		&.active
+			&:after
+				top: 6px
+				transform: rotate(-135deg)
 		&:after
 			top: 4px
 			right: -16px
@@ -147,6 +166,7 @@
 			border-right: 2px solid $black
 			border-bottom: 2px solid $black
 			transform: rotate(45deg)
+			transition: transform .5s
 	&__reset
 		margin-left: 35px
 		&:first-child

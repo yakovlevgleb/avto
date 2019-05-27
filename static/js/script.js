@@ -51,6 +51,28 @@
 				},
 			});
 
+			if ($('.js-all-params').length) {
+				$('.js-all-params').on('click', function (e) {
+					var _t = $(this),
+						parents = _t.parents('.form'),
+						hiddenRow = parents.find('.form__row--hidden');
+					if (hiddenRow.length > 0) {
+						if (_t.hasClass('active')) {
+							_t
+								.removeClass('active')
+								.text('Все параметры');
+							hiddenRow.fadeOut(350);
+						} else {
+							_t
+								.addClass('active')
+								.text('Свернуть');
+							hiddenRow.fadeIn(350).css('display', 'flex');
+						}
+					}
+					e.preventDefault();
+				});
+			}
+
 		}
 	}).init();
 
