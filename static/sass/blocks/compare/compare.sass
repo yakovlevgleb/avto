@@ -1,8 +1,9 @@
 .compare
 	margin: 52px 0 53px
+	@media (max-width: 1023px)
+		display: none
 	&__title
-		margin-bottom: 10px
-	//&__wrap
+		margin-bottom: 3px
 	&__row
 		display: flex
 		position: relative
@@ -45,27 +46,29 @@
 				background-color: whitesmoke
 				z-index: -1
 			.compare__cell
-				padding: 10px 0
+				padding: 13px 0
 	&__cell
 		margin-right: 32px
-		padding: 25px 0
+		padding: 17px 0
+		@media (max-width: 1281px)
+			margin-right: 20px
 		&:last-child
 			margin-right: 0
 		&--car
 			flex-shrink: 0
 			position: relative
-			width: 25%
-			padding: 20px 36px
+			width: 23%
+			padding: 17px 36px
 		&--eng
-			width: 15%
+			width: 14%
 		&--gap
-			width: 15%
+			width: 14%
 		&--trunk
-			width: 15%
+			width: 14%
 		&--mile
-			width: 15%
+			width: 18%
 		&--price
-			width: 15%
+			width: 17%
 			.compare__cell-text
 				font-size: 15px
 				line-height: 17px

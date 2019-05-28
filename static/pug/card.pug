@@ -306,6 +306,106 @@ html(lang="ru")
 									p В салоне - набор ниш и подстаканников, карманы в обивках дверей, выдвижной контейнер под передним пассажирским сиденьем, охлаждаемый перчаточный ящик. В багажнике - крепления для сетки, пластиковые ниши за арками задних колес. Двойной пол в багажном отделении при сложенных задних сиденьях образует ровную площадку - это значительно облегчает транспортировку вещей всех форм и размеров. Заднее сиденье складывается в пропорции 60/40 - все это помогает удобно перевезти габаритный груз.
 								button(type="button").overview__text-toggle Узнать больше
 
+				section.icatalog.icatalog--tile.icatalog--similar-cars
+					h3.icatalog__title Похожие автомобили
+					.icatalog__slider
+						.swiper-buttons
+							.swiper-button-prev
+							.swiper-button-next
+						.swiper-container.js-swiper-icatalog
+							.swiper-wrapper
+								- for (var i=0; i<4;i++) {
+									.swiper-slide
+										.icatalog__element.icatalog__element--vert
+											.icatalog__photos
+												.swiper-container.js-catalog-slider
+													.swiper-wrapper
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-1.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-1.jpg", alt="")
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-2.jpg", alt="")
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-3.jpg", alt="")
+													.swiper-pagination
+
+											.icatalog__info
+												.icatalog__info-top
+													.icatalog__info-col.icatalog__info-col--45per
+														a(href="#").icatalog__car Mercedes GLE 350
+														p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+														p.icatalog__char Автомат / Бензин
+													.icatalog__info-col.icatalog__info-col--35per
+														p.icatalog__cost 2 248 800 руб
+														p.icatalog__old-cost 2 645 000 руб
+														.icatalog__credit от 14 768 Р/мес
+															.icatalog__credit-modal
+																.icatalog__credit-over
+																	p.icatalog__credit-title Заголовок поясняющий условия кредитования
+																	.icatalog__credit-text
+																		p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+													.icatalog__info-row.icatalog__info-row--30per
+														p.icatalog__year 2017 г.
+														p.icatalog__run 78 951 км
+
+												.icatalog__info-bottom
+													.icatalog__autocenter Регинас Профи, Екатеринбург
+														p.icatalog__autocenter-adress ул. Высоцкого, 3
+													a(href="#").btn.icatalog__btn Оставить заявку
+								- }
+
+				section.icatalog.icatalog--tile.icatalog--watched-cars
+					h3.icatalog__title Ранее просмотренные автомобили
+					.icatalog__slider
+						.swiper-buttons
+							.swiper-button-prev
+							.swiper-button-next
+						.swiper-container.js-swiper-icatalog
+							.swiper-wrapper
+								- for (var i=0; i<5;i++) {
+									.swiper-slide
+										.icatalog__element.icatalog__element--vert
+											.icatalog__photos
+												.swiper-container.js-catalog-slider
+													.swiper-wrapper
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-1.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-1.jpg", alt="")
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-2.jpg", alt="")
+														.swiper-slide.icatalog__photos-slide
+															a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+																img(src="./img/catalog-photo-3.jpg", alt="")
+													.swiper-pagination
+
+											.icatalog__info
+												.icatalog__info-top
+													.icatalog__info-col.icatalog__info-col--45per
+														a(href="#").icatalog__car Mercedes GLE 350
+														p.icatalog__char Внедорожник 5 дв. / 3.2 л / 349 л.с
+														p.icatalog__char Автомат / Бензин
+													.icatalog__info-col.icatalog__info-col--35per
+														p.icatalog__cost 2 248 800 руб
+														p.icatalog__old-cost 2 645 000 руб
+														.icatalog__credit от 14 768 Р/мес
+															.icatalog__credit-modal
+																.icatalog__credit-over
+																	p.icatalog__credit-title Заголовок поясняющий условия кредитования
+																	.icatalog__credit-text
+																		p Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации.
+													.icatalog__info-row.icatalog__info-row--30per
+														p.icatalog__year 2017 г.
+														p.icatalog__run 78 951 км
+
+												.icatalog__info-bottom
+													.icatalog__autocenter Регинас Профи, Екатеринбург
+														p.icatalog__autocenter-adress ул. Высоцкого, 3
+													a(href="#").btn.icatalog__btn Оставить заявку
+								- }
+
 				.iseo
 					ul.iseo__banners
 						li.iseo__banners-item

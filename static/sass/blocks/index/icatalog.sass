@@ -42,6 +42,14 @@
 			&__element
 				&:last-child
 					margin-bottom: 0
+	
+	&--tile
+		.icatalog__title
+			max-width: calc(100% - 110px)
+			margin-bottom: 12px
+		.swiper-slide
+			height: auto
+
 	&__cities
 		font-size: 23px
 		font-weight: bold
@@ -117,15 +125,46 @@
 			flex-direction: column
 			max-height: none
 			margin-bottom: 0
+			height: 100%
+			&:hover
+				box-shadow: none
 			.icatalog
+				&__photos
+					width: 100%
+					max-width: 276px
+					@media (max-width: 1023px)
+						max-width: 303px
+					@media (max-width: 767px)
+						max-width: 348px
+					@media (max-width: 450px)
+						max-width: 100%
 				&__autocenter
 					display: none
+				&__photos-slide
+					a
+						display: block
+						width: 100%
+						font-size: 0
+					img
+						max-width: 100%
+				&__char
+					margin-top: 0
+				&__car
+					&+.icatalog__char
+						margin-top: 9px
 				&__year, &__run
 					display: inline-block
 					vertical-align: top
-					order: 2
+					text-align: left
+					margin-right: 22px
+					font-size: 16px
+					&:last-child
+						margin-right: 0
 				&__info
+					flex-grow: 1
 					padding: 0
+					border: none
+					padding-top: 15px
 					&-top
 						flex-direction: column
 					&-col
@@ -134,7 +173,42 @@
 							order: 1
 						&--35per
 							order: 3
+							margin: 19px 0 21px
+					&-row--30per
+						justify-content: flex-start
+						width: 100%
+						order: 2
+						margin-top: 9px
+					&-bottom
+						margin-top: auto
+				&__btn
+					text-align: center
+					width: 100%
+			.swiper-slide
+				height: 100%
 
+	&__slider
+		position: relative
+		.swiper
+			&-buttons
+				width: 82px
+				position: absolute
+				right: 0
+				top: -45px
+			&-button
+				&-prev, &-next
+					top: 50%
+					margin-top: 0
+					transform: translateY(-50%)
+					width: 36px
+					height: 36px
+					background-color: $blue
+					background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAMAAADzlqVxAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMA+erHuyYK9fCzqZ6UUEY9Ni0PBoiHn825VwAAAEVJREFUCNdFzkcOACEMA0Dq9qXj/z+VQyKc00hpNjE0I+XhD1F0CMrqcHdhufDoaD7xKpPFp/wt5tZglxu8wsv8xgRMtQDx8wMEK2ygLAAAAABJRU5ErkJggg==')
+				&-prev
+					left: 0
+					transform: translateY(-50%) rotate(180deg)
+				&-next
+					right: 0
 
 	&__photos
 		max-width: 380px
@@ -376,6 +450,8 @@
 
 		&__element
 			max-height: 182px
+			&--vert
+				max-height: none
 
 		&__info
 			padding: 15px 20px
@@ -392,6 +468,8 @@
 			width: calc(100% / 2 - 15px)
 			flex-direction: column
 			max-height: inherit
+			&--vert
+				width: 100%
 
 		&__photos
 			max-width: inherit

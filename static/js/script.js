@@ -19,16 +19,6 @@
 				}
 			});
 
-			var sliderIcatalog = new Swiper('.js-swiper-icatalog', {
-				speed: 400,
-				spaceBetween: 32,
-				slidesPerView: 4,
-				navigation: {
-					nextEl: '.icatalog__slider .swiper-button-next',
-					prevEl: '.icatalog__slider .swiper-button-prev'
-				}
-			});
-
 			var sliderAction = new Swiper('.js-swiper-action', {
 				speed: 400,
 				spaceBetween: 0,
@@ -342,11 +332,47 @@
 			});
 		},
 
+		swiperIcatalog: function () {
+
+			$('.js-swiper-icatalog').each(function () {
+				var _t = $(this),
+					$btnPrev = _t.parent('.icatalog__slider').find('.swiper-button-prev')[0],
+					$btnNext = _t.parent('.icatalog__slider').find('.swiper-button-next')[0];
+
+				new Swiper(_t[0], {
+					speed: 400,
+					spaceBetween: 32,
+					slidesPerView: 4,
+					noSwiping: true,
+					simulateTouch: false,
+					navigation: {
+						nextEl: $btnNext,
+						prevEl: $btnPrev
+					},
+					breakpoints: {
+						450: {
+							slidesPerView: 1
+						},
+						767: {
+							slidesPerView: 2
+						},
+						1023: {
+							slidesPerView: 3
+						},
+					}
+				});
+				
+			});
+
+		},
+
 		init: function () {
 
 			if ($('.js-tabs').length) this.tabs();
 
 			if ($('.js-swiper-comapre-cars').length) this.compare();
+
+			if ($('.js-swiper-icatalog').length) this.swiperIcatalog();
 
 			if ($('.js-all-params').length) {
 				$('.js-all-params').on('click', function (e) {

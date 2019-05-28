@@ -15,6 +15,8 @@
 	&__nav
 		display: flex
 		border-top: 1px solid whitesmoke
+		@media (max-width: 670px)
+			flex-wrap: wrap
 		&-item
 			width: 100%
 			&+.tabs__nav-item
@@ -26,7 +28,7 @@
 			justify-content: center
 			width: 100%
 			background-color: white
-			padding: 35px 25px
+			padding: 32px 25px
 			border: none
 			outline: none
 			user-select: none

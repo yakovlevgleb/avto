@@ -3,6 +3,9 @@
 	width: calc(50% - 32px)
 	margin: 0 16px
 	border: 1px solid rgba(#e0e0e0, .9)
+	@media (max-width: 900px)
+		width: 100%
+		margin: 50px 0 0
 	&__title
 		padding: 10px
 		color: $red
@@ -12,20 +15,28 @@
 		line-height: 22px
 		text-transform: uppercase
 		white-space: nowrap
-		letter-spacing: 0.1em
+		letter-spacing: 0.2em
 		writing-mode: tb-rl
 		transform: scale(-1, -1)
 	&__items
 		display: flex
 		justify-content: space-between
-		align-items: center
+		align-items: flex-start
 		width: 100%
 		border-left: 1px solid rgba(#e0e0e0, .9)
+		@media (max-width: 450px)
+			flex-direction: column
+			align-items: center
 	&__item
 		position: relative
-		padding: 25px 25px 25px 60px
+		padding: 38px 25px 34px 40px
 		width: calc(50% - 16px)
+		@media (max-width: 450px)
+			width: 100%
+			padding-left: 25px
 		& + .present__item
+			@media (max-width: 450px)
+				margin-top: 25px
 			&:before
 				content: 'или'
 				display: inline-block
@@ -36,11 +47,18 @@
 				color: rgba(#222, .5)
 				font-size: 16px
 				line-height: 18px
+				@media (max-width: 1281px)
+					left: -20px
+				@media (max-width: 450px)
+					left: 50%
+					transform: translateX(-50%)
+					top: -22px
 		&-overimg
 			display: flex
 			justify-content: center
+			align-items: center
 			width: 100%
-			margin-bottom: 20px
+			margin-bottom: 7px
 			&:last-child
 				margin-bottom: 0
 		&-img

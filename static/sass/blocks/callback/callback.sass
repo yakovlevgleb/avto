@@ -5,9 +5,12 @@
 	justify-content: center
 	background-color: white
 	border: 1px solid #e0e0e0
-	padding: 23px 35px
-	margin: 67px 0 70px
+	padding: 32px 35px
+	margin: 65px 0 70px
 	overflow: hidden
+	@media (max-width: 670px)
+		padding-left: 15px
+		padding-right: 15px
 	&:last-child
 		margin-bottom: 0
 	&:first-child
@@ -16,10 +19,14 @@
 		display: inline-block
 		vertical-align: top
 		position: relative
-		padding-left: 165px
+		padding-left: 163px
 		color: #2c2c52
 		font-size: 24px
 		line-height: 32px
+		@media (max-width: 670px)
+			padding-left: 0
+			padding-top: 140px
+			text-align: center
 		&:before
 			content: ''
 			display: block
@@ -32,8 +39,14 @@
 			background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAMAAACnUt2HAAAAh1BMVEUAAADqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjJVz40wAAAALHRSTlMABR3d4MSh+OaUj4J7dGNgTiYRCfO/tq2olm1XUj4zKxfu2NHJW0hFDPGLiOU7N2wAAADLSURBVBjTTc5XbsMwFAXRIdVL1KtV3Z2E+1+fTcqGfL4eBuAFASYJ0vLtUzcINmWjjiva4+5aI0arlIpgTtJJsFwCAWTq5fggjaPWjkvR9UCttANaEV6kqK/gmeiwnM59TnoWuV9imxiAKAYrI4xxEwLd6hJNWrKwxa1h0XFk8xPRzIUPrp4UGHNLn1HB6r/qP4ZMiCds4KYHUnbm2UHXaDtDyWfffDU3hxeu39VzA6VVCZvxV+063nJnj3f4uFrv9scXkbmWVzkDPAHPxhj4V5Qa8QAAAABJRU5ErkJggg==') no-repeat center
 			border: 33px solid #2c2c52
 			border-radius: 50%
+			@media (max-width: 670px)
+				top: 0
+				left: 50%
+				transform: translateX(-50%)
 		a
 			color: #2c2c52
 			font-size: 24px
 			line-height: 32px
 			font-weight: 900
+			@media (max-width: 670px)
+				display: block
