@@ -1,5 +1,32 @@
 .icatalog
 	margin-bottom: 50px
+
+	&--auction
+		margin-bottom: 0
+		.icatalog
+			&__info-bottom
+				align-self: flex-start
+				margin-top: -35px
+			&__info
+				padding: 20px 40px 28px
+			&__info-top
+				justify-content: space-between
+			&__info-col
+				&--22per
+					margin-top: 7px
+				&--30per
+					padding-top: 8px
+		.timer
+			margin-bottom: 39px
+			span
+				font-size: 14px
+				line-height: 20px
+			time
+				font-size: 19px
+				line-height: 20px
+		input.inputnumb__input
+			margin-bottom: 10px
+
 	&--inside
 		width: 100%
 		margin: 32px 0 0
@@ -47,6 +74,45 @@
 		&:hover
 			box-shadow: 0 6px 29px rgba(#434355, .24)
 
+		&:last-child
+			margin-bottom: 0
+
+		&--in
+			position: relative
+
+			&:before
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				width: 4px
+				height: 100%
+				background-color: $auction-in
+
+		&--win
+			position: relative
+
+			&:before
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				width: 4px
+				height: 100%
+				background-color: $auction-win
+
+		&--passed
+			position: relative
+
+			&:before
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				width: 4px
+				height: 100%
+				background-color: $auction-passed
+
 	&__photos
 		max-width: 380px
 
@@ -81,6 +147,7 @@
 		line-height: 20px
 		font-weight: normal
 		color: rgba(57,57,57,0.5)
+		margin-top: 9px
 
 	&__autocenter
 		font-size: 14px
@@ -95,12 +162,24 @@
 		&--35per
 			width: 35%
 
+		&--22per
+			width: 22%
+		
+		&--30per
+			width: 30%
+	
+	&__info-row
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+		&--30per
+			width: 30%
+
 	&__year
-		width: 15%
 		white-space: nowrap
 
 	&__run
-		width: 15%
 		text-align: right
 		white-space: nowrap
 
@@ -203,6 +282,7 @@
 		height: 85px
 		background-color: $blue
 		text-align: center
+		margin-top: 27px
 
 		&:hover
 			span
@@ -216,6 +296,45 @@
 			color: $white
 			border-bottom: 1px solid $white
 			transition: .5s border-color
+		
+	&__costs
+		margin-bottom: 16px
+
+		&--badget
+			padding-left: 35px
+			position: relative 
+			
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: 6px
+				width: 20px
+				height: 30px
+				background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeBAMAAADePCNYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEXqKjL////qKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjL///8nfzysAAAADXRSTlMAAPOaNJnNZw0MZswz9kqrZwAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBRwRNxr+qjTSAAAALUlEQVQY02O4CwcMo0xszEsmrroQ5rUKBoZZe0FMZQcGIOAJusuQ3sAABpKrAdqA8VrNmIHcAAAAAElFTkSuQmCC')
+
+		&+.timer
+			flex-direction: row
+			justify-content: space-between
+			margin-bottom: 7px
+			span
+				margin-bottom: 0
+
+		&:last-child
+			margin-bottom: 0
+
+	&__costs-label
+		font-size: 14px
+		line-height: 20px
+		color: $black
+
+	&__costs-value
+		font-size: 14px
+		line-height: 20px
+		color: $black
+
+	&__bet
+		width: 100%
 
 @media (max-width: 1280px)
 	.icatalog
@@ -277,11 +396,24 @@
 				width: 100%
 				margin-bottom: 10px
 
+			&--30per
+				width: 100%
+				margin-bottom: 10px
+			
+			&--22per
+				width: 100%
+				margin-bottom: 10px
+
+		&__info-row
+			&--30per
+				justify-content: flex-start
+				width: 100%
+				margin-bottom: 10px
+
 		&__year
-			width: 100%
+			margin-right: 25px
 
 		&__run
-			width: 100%
 			text-align: left
 			margin-bottom: 10px
 

@@ -298,6 +298,11 @@
 				e.preventDefault();
 			});
 
+			$('.js-open-filter').click(function() {
+				$(this).toggleClass('active');
+				$('.auction__filter').slideToggle();
+			})
+
 			return this;
 		}
 
