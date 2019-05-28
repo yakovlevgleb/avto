@@ -47,6 +47,28 @@
 		&:hover
 			box-shadow: 0 6px 29px rgba(#434355, .24)
 
+		&--vert
+			flex-direction: column
+			max-height: none
+			margin-bottom: 0
+			.icatalog
+				&__autocenter
+					display: none
+				&__year, &__run
+					display: inline-block
+					vertical-align: top
+					order: 2
+				&__info
+					padding: 0
+					&-top
+						flex-direction: column
+					&-col
+						width: 100%
+						&--45per
+							order: 1
+						&--35per
+							order: 3
+
 	&__photos
 		max-width: 380px
 
