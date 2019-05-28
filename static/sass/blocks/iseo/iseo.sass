@@ -43,20 +43,22 @@
 				&__banners
 					&-item
 						width: 100%
+						margin-bottom: 30px
+						&:last-child
+							margin-bottom: 0
 						@media (max-width: 900px)
 							width: calc(100%/3 -  20px)
 						@media (max-width: 767px)
 							width: 100%
 		&-item
 			width: calc(100%/3 -  20px)
-			margin-bottom: 30px
 			@media (max-width: 767px)
 				width: 100%
-			&:last-child
-				margin-bottom: 0
+				margin-bottom: 30px
+				&:last-child
+					margin-bottom: 0
 		&-overimg
 			display: block
 			font-size: 0
 		&-img
 			max-width: 100%
-

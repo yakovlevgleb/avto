@@ -17,11 +17,11 @@ html(lang="ru")
 				.card
 					.card__row
 						ul.card__info-list
-							li.card__info-item.card__info-item--price Цена от
+							li.card__info-item.card__info-item--price Цена от 
 								span.red 549 000 руб
-							li.card__info-item.card__info-item--profit Выгода от
+							li.card__info-item.card__info-item--profit Выгода от 
 								span 70 000 руб
-							li.card__info-item.card__info-item--credit В кредит от
+							li.card__info-item.card__info-item--credit В кредит от 
 								span 7 500 руб/мес
 
 						.present
@@ -42,30 +42,30 @@ html(lang="ru")
 						a(href="#").card__btn.btn.btn--blue Рассчитать КАСКО
 						a(href="#").card__btn.btn Забронировать
 
+				+car-characteristics
 
 				.offer
-					form
-						.offer__row
-							.offer__col
-								.offer__title Хочу купить
-									span LADA XRAY CROSS 1,6л 16-кл., 5МТ, 106 л.с.
-							.offer__col
-								.checkbox
-									input(type="checkbox").checkbox__input
-									label.checkbox__label Нужен кредит
-								.checkbox
-									input(type="checkbox").checkbox__input
-									label.checkbox__label Хочу сдать свою машину в зачет
-								.checkbox
-									input(type="checkbox").checkbox__input
-									label.checkbox__label Нужна страховка
-								.checkbox
-									input(type="checkbox").checkbox__input
-									label.checkbox__label Хочу особую скидку
-							.offer__col
-								.offer__text
-									p В случае возникновения вопросов по поводу условий приобретения, способов кредитования, скидок и прочего вы можете обратитьсяпо телефону: +7 (351) 2 555 700
-								a(href="#").offer__btn.btn Заказать автомобиль
+					.offer__row
+						.offer__col
+							.offer__title Хочу купить 
+								span LADA XRAY CROSS 1,6л 16-кл., 5МТ, 106 л.с.
+						.offer__col
+							.checkbox
+								input(type="checkbox" id="chbx_01").checkbox__input
+								label(for="chbx_01").checkbox__label Нужен кредит
+							.checkbox
+								input(type="checkbox" id="chbx_02").checkbox__input
+								label(for="chbx_02").checkbox__label Хочу сдать свою машину в зачет
+							.checkbox
+								input(type="checkbox" id="chbx_03").checkbox__input
+								label(for="chbx_03").checkbox__label Нужна страховка
+							.checkbox
+								input(type="checkbox" id="chbx_04").checkbox__input
+								label(for="chbx_04").checkbox__label Хочу особую скидку
+						.offer__col
+							.offer__text
+								p В случае возникновения вопросов по поводу условий приобретения, способов кредитования, скидок и прочего вы можете обратиться по телефону: +7 (351) 2 555 700
+							a(href="#").offer__btn.btn Заказать автомобиль
 
 				.action
 					.action__col
@@ -87,22 +87,68 @@ html(lang="ru")
 
 					.action__col
 						.action__slider
-							.swiper-container
+							.swiper-container.js-swiper-action
 								.swiper-wrapper
 									- for (var i = 1; i < 5; i++) {
 										.swiper-slide
 											a(href="#").action__slider-overimg
-												img(src="./img/action-img-1.jpg" alt="").action__slider-overimg
+												img(src="./img/action-img-1.jpg" alt="").action__slider-img
 									- }
-								.swiper-pagination
+							.swiper-pagination.swiper-pagination--blue
 
-					.callback
-						.callback__title Выгодный заказ по телефону
-							a(href="tel:+73512555700") +7 (351) 2-555-700
+				.callback
+					.callback__title Выгодный заказ по телефону 
+						a(href="tel:+73512555700") +7 (351) 2-555-700
 
 				.ibanner
 					a(href="#")
 						img(src="./img/banner-2.jpg" alt="")
+
+				.tabs.js-tabs
+					ul.tabs__nav
+						li.tabs__nav-item
+							button(type="button" data-tabs-nav="01").tabs__nav-button.tabs__nav-button--active 
+								span Виртуальный тур по автомобилю
+						li.tabs__nav-item
+							button(type="button" data-tabs-nav="02").tabs__nav-button
+								span Виртуальный тур по салону
+					ul.tabs__list
+						li(data-tabs-item="01").tabs__list-item.tabs__list-item--active.swiper-active
+							.tabs__slider
+								.swiper-container.js-swiper-tabs
+									.swiper-wrapper
+										- for (var i = 1; i < 5; i++) {
+											.swiper-slide
+												a(href="#").tabs__slider-overimg
+													img(src="./img/tabs-gallery-img-1.jpg" alt="").tabs__slider-img
+										- }
+								.swiper-pagination.swiper-pagination--blue
+
+						li(data-tabs-item="02").tabs__list-item
+							.tabs__slider
+								.swiper-container.js-swiper-tabs
+									.swiper-wrapper
+										- for (var i = 1; i < 5; i++) {
+											.swiper-slide
+												a(href="#").tabs__slider-overimg
+													img(src="./img/tabs-gallery-img-1.jpg" alt="").tabs__slider-img
+										- }
+								.swiper-pagination.swiper-pagination--blue
+
+				+downloads
+
+				.overview
+					h3.overview__title Обзор LADA XRay CROSS
+					.overview__row
+						.overview__overimg
+							img(src="./img/overview-img.jpg" alt="").overview__img
+						.overview__right
+							.overview__text
+								p
+									b Практичность
+								p LADA XRAY создан по принципу «Автомобиль - мой второй дом»: интерьер машины комфортени рационален.
+								p В салоне - набор ниш и подстаканников, карманы в обивках дверей, выдвижной контейнер под передним пассажирским сиденьем, охлаждаемый перчаточный ящик. В багажнике - крепления для сетки, пластиковые ниши за арками задних колес. Двойной пол в багажном отделении при сложенных задних сиденьях образует ровную площадку - это значительно облегчает транспортировку вещей всех форм и размеров. Заднее сиденье складывается в пропорции 60/40 - все это помогает удобно перевезти габаритный груз. 
+
 
 				.iseo
 					ul.iseo__banners

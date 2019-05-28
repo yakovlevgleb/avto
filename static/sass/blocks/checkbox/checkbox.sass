@@ -1,0 +1,53 @@
+.checkbox
+	position: relative
+	width: 100%
+	& + .checkbox
+		margin-top: 18px
+	&__input
+		position: absolute
+		left: 0
+		top: 0
+		opacity: 0
+		visibility: hidden
+		&:checked ~ label
+			&:before
+				background-color: $red
+			&:after
+				opacity: 1
+	&__label
+		display: inline-block
+		position: relative
+		padding-left: 45px
+		color: $white
+		font-family: Roboto;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		cursor: pointer
+		&:hover
+			&:before
+				background-color: $red
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 1px
+			width: 18px
+			height: 18px
+			border: 2px solid $white
+			background-color: transparent
+			transition: background .5s
+			cursor: pointer
+		&:after
+			content: ''
+			position: absolute
+			left: 5px
+			top: 5px
+			width: 12px
+			height: 6px
+			border-left: 2px solid $white
+			border-bottom: 2px solid $white
+			transform: rotate(-45deg)
+			opacity: 0
+			transition: opacity .5s
+			cursor: pointer

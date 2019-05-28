@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
 
 	window.reginas = {};
 
@@ -17,6 +17,15 @@
 				},
 			});
 
+			var sliderAction = new Swiper('.js-swiper-action', {
+				speed: 400,
+				spaceBetween: 0,
+				pagination: {
+					el: '.action .swiper-pagination',
+					type: 'bullets',
+					clickable: true
+				}
+			});
 
 			var catalogItemSlider = new Swiper('.js-catalog-slider', {
 				speed: 400,
@@ -49,33 +58,6 @@
 				thumbs: {
 					swiper: galleryThumbs
 				},
-			});
-
-			if ($('.js-all-params').length) {
-				$('.js-all-params').on('click', function (e) {
-					var _t = $(this),
-						parents = _t.parents('.form'),
-						hiddenRow = parents.find('.form__row--hidden');
-					if (hiddenRow.length > 0) {
-						if (_t.hasClass('active')) {
-							_t
-								.removeClass('active')
-								.text('Все параметры');
-							hiddenRow.fadeOut(350);
-						} else {
-							_t
-								.addClass('active')
-								.text('Свернуть');
-							hiddenRow.fadeIn(350).css('display', 'flex');
-						}
-					}
-					e.preventDefault();
-				});
-			}
-
-			$(".js-form-reset").on('click', function (e) {
-				$(this).parents('form')[0].reset();
-				e.preventDefault();
 			});
 
 		}
@@ -144,68 +126,157 @@
 	}).init();
 
 	window.reginas.form = ({
-			maxValInputs: function maxValInputs() {
-				var maxValInputs = document.querySelectorAll(".js-input-numb");
-				var _loop = function _loop(maxValInput) {
-					var plus = maxValInput.nextElementSibling.nextElementSibling,
-						minus = maxValInput.nextElementSibling,
-						max = maxValInput.getAttribute("data-max"),
-						min = maxValInput.getAttribute("data-min");
-					if (!maxValInput.getAttribute("data-init")) {
-						maxValInput.addEventListener("keydown", function (e) {
-							var validArr = [46, 8, 9, 27, 13, 110, 190];
-							if (validArr.indexOf(e.keyCode) !== -1 || e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode >= 35 && e.keyCode <= 39) {
-								return
-							}
-							if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
-								e.preventDefault()
-							}
-						});
-						maxValInput.addEventListener("focusout", function (e) {
-							if (+maxValInput.value > +max) maxValInput.value = max;
-							if (+maxValInput.value < +min) maxValInput.value = min;
-							var eventChange = new Event("change");
-							maxValInput.dispatchEvent(eventChange)
-						});
-						plus.addEventListener("click", function () {
-							if (+maxValInput.value < +max) maxValInput.value = +maxValInput.value + 1;
-							var eventChange = new Event("change");
-							maxValInput.dispatchEvent(eventChange)
-						});
-						minus.addEventListener("click", function () {
-							if (+maxValInput.value > +min) maxValInput.value = +maxValInput.value - 1;
-							var eventChange = new Event("change");
-							maxValInput.dispatchEvent(eventChange)
-						})
-					}
-					maxValInput.setAttribute("data-init", 1);
-				};
-				var _iteratorNormalCompletion = true;
-				var _didIteratorError = false;
-				var _iteratorError = undefined;
+		maxValInputs: function maxValInputs() {
+			var maxValInputs = document.querySelectorAll(".js-input-numb");
+			var _loop = function _loop(maxValInput) {
+				var plus = maxValInput.nextElementSibling.nextElementSibling,
+					minus = maxValInput.nextElementSibling,
+					max = maxValInput.getAttribute("data-max"),
+					min = maxValInput.getAttribute("data-min");
+				if (!maxValInput.getAttribute("data-init")) {
+					maxValInput.addEventListener("keydown", function (e) {
+						var validArr = [46, 8, 9, 27, 13, 110, 190];
+						if (validArr.indexOf(e.keyCode) !== -1 || e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true) || e.keyCode >= 35 && e.keyCode <= 39) {
+							return
+						}
+						if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+							e.preventDefault()
+						}
+					});
+					maxValInput.addEventListener("focusout", function (e) {
+						if (+maxValInput.value > +max) maxValInput.value = max;
+						if (+maxValInput.value < +min) maxValInput.value = min;
+						var eventChange = new Event("change");
+						maxValInput.dispatchEvent(eventChange)
+					});
+					plus.addEventListener("click", function () {
+						if (+maxValInput.value < +max) maxValInput.value = +maxValInput.value + 1;
+						var eventChange = new Event("change");
+						maxValInput.dispatchEvent(eventChange)
+					});
+					minus.addEventListener("click", function () {
+						if (+maxValInput.value > +min) maxValInput.value = +maxValInput.value - 1;
+						var eventChange = new Event("change");
+						maxValInput.dispatchEvent(eventChange)
+					})
+				}
+				maxValInput.setAttribute("data-init", 1);
+			};
+			var _iteratorNormalCompletion = true;
+			var _didIteratorError = false;
+			var _iteratorError = undefined;
+			try {
+				for (var _iterator = maxValInputs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+					var maxValInput = _step.value;
+					_loop(maxValInput)
+				}
+			} catch (err) {
+				_didIteratorError = true;
+				_iteratorError = err
+			} finally {
 				try {
-					for (var _iterator = maxValInputs[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-						var maxValInput = _step.value;
-						_loop(maxValInput)
+					if (!_iteratorNormalCompletion && _iterator.return) {
+						_iterator.return()
 					}
-				} catch (err) {
-					_didIteratorError = true;
-					_iteratorError = err
 				} finally {
-					try {
-						if (!_iteratorNormalCompletion && _iterator.return) {
-							_iterator.return()
-						}
-					} finally {
-						if (_didIteratorError) {
-							throw _iteratorError
-						}
+					if (_didIteratorError) {
+						throw _iteratorError
 					}
 				}
-			},
-		init: function() {
+			}
+		},
+		init: function () {
 			var _th = this;
 			this.maxValInputs();
 		}
 	}).init();
+
+	window.reginas.obj = ({
+
+		tabs: function () {
+
+			function swiperTabsInit() {
+				if (!$('.swiper-active .js-swiper-tabs').hasClass('swiper-initialized')) {
+					console.log('1');
+					var sliderTabs = new Swiper('.swiper-active .js-swiper-tabs', {
+						speed: 400,
+						spaceBetween: 0,
+						pagination: {
+							el: '.swiper-active .swiper-pagination',
+							type: 'bullets',
+							clickable: true
+						},
+						on:{
+							init: function () {
+								this.el.classList.add('swiper-initialized')
+							},
+						}
+					});
+				}
+			}
+
+			swiperTabsInit();
+			
+			var tabsPar = $('.js-tabs'),
+				tabsBtn = tabsPar.find('.tabs__nav-button'),
+				tabsItem = tabsPar.find('.tabs__list-item');
+
+			tabsBtn.on('click', function (e) {
+				var _t = $(this),
+					_tData = _t.data('tabs-nav');
+				if (!_t.hasClass('tabs__nav-button--active')) {
+					tabsBtn.removeClass('tabs__nav-button--active');
+					_t.addClass('tabs__nav-button--active');
+					tabsItem.stop().fadeOut(350, function () {
+						$(this).removeClass('tabs__list-item--active swiper-active');
+					});
+					setTimeout(function () {
+						$('.tabs__list-item[data-tabs-item="' + _tData + '"]')
+							.stop()
+							.fadeIn(300, function () {
+								$(this).addClass('swiper-active');
+								swiperTabsInit();
+							});
+					}, 350);
+				}
+				e.preventDefault();
+			});
+		},
+
+		init: function () {
+
+			if ($('.js-tabs').length) this.tabs();
+
+			if ($('.js-all-params').length) {
+				$('.js-all-params').on('click', function (e) {
+					var _t = $(this),
+						parents = _t.parents('.form'),
+						hiddenRow = parents.find('.form__row--hidden');
+					if (hiddenRow.length > 0) {
+						if (_t.hasClass('active')) {
+							_t
+								.removeClass('active')
+								.text('Все параметры');
+							hiddenRow.fadeOut(350);
+						} else {
+							_t
+								.addClass('active')
+								.text('Свернуть');
+							hiddenRow.fadeIn(350).css('display', 'flex');
+						}
+					}
+					e.preventDefault();
+				});
+			}
+
+			$(".js-form-reset").on('click', function (e) {
+				$(this).parents('form')[0].reset();
+				e.preventDefault();
+			});
+
+			return this;
+		}
+
+	}).init();
+
 });
