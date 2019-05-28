@@ -3,7 +3,9 @@
 	window.reginas = {};
 
 	window.reginas.slider = ({
+
 		init: function () {
+
 			var heroSlider = new Swiper('.js-hero-slider', {
 				speed: 400,
 				navigation: {
@@ -14,7 +16,17 @@
 					el: '.js-hero-slider .swiper-pagination',
 					type: 'bullets',
 					clickable: true
-				},
+				}
+			});
+
+			var sliderIcatalog = new Swiper('.js-swiper-icatalog', {
+				speed: 400,
+				spaceBetween: 32,
+				slidesPerView: 4,
+				navigation: {
+					nextEl: '.icatalog__slider .swiper-button-next',
+					prevEl: '.icatalog__slider .swiper-button-prev'
+				}
 			});
 
 			var sliderAction = new Swiper('.js-swiper-action', {
@@ -34,7 +46,7 @@
 					el: '.js-catalog-slider .swiper-pagination',
 					type: 'bullets',
 					clickable: true
-				},
+				}
 			});
 
 			var galleryThumbs = new Swiper('.js-preview-thumbs', {
@@ -80,7 +92,7 @@
 				},
 				thumbs: {
 					swiper: galleryThumbs
-				},
+				}
 			});
 
 		}
@@ -217,11 +229,75 @@
 
 	window.reginas.obj = ({
 
-		tabs: function () {
+		compare: function() {
+
+			$('.js-swiper-comapre-cars').each(function () {
+				var _t = $(this),
+					$btnPrev = _t.parent('.compare__cell').find('.swiper-button-prev')[0],
+					$btnNext = _t.parent('.compare__cell').find('.swiper-button-next')[0];
+
+				new Swiper(_t[0], {
+					speed: 400,
+					spaceBetween: 0,
+					navigation: {
+						nextEl: $btnNext,
+						prevEl: $btnPrev
+					},
+					on: {
+						init: function () {
+							var parents = $(this.$wrapperEl[0]).parents('.compare__row'),
+								activeSlide = $(this.$wrapperEl[0]).find('.swiper-slide-active'),
+								dataCarEng = activeSlide.data('car-eng') && activeSlide.data('car-eng') != '' ? parseInt(activeSlide.data('car-eng')) : 0,
+								dataCarGap = activeSlide.data('car-gap') && activeSlide.data('car-gap') != '' ? parseInt(activeSlide.data('car-gap')) : 0,
+								dataCarTrunk = activeSlide.data('car-trunk') && activeSlide.data('car-trunk') != '' ? parseInt(activeSlide.data('car-trunk')) : 0,
+								dataCarMile = activeSlide.data('car-mile') && activeSlide.data('car-mile') != '' ? parseInt(activeSlide.data('car-mile')) : 0,
+								dataCarPrice = activeSlide.data('car-price') && activeSlide.data('car-price') != '' ? (activeSlide.data('car-price')).toLocaleString() : 0,
+								raitingEng = parents.find('.compare__cell--eng .raiting__ind'),
+								raitingGap = parents.find('.compare__cell--gap .raiting__ind'),
+								raitingTrunk = parents.find('.compare__cell--trunk .raiting__ind'),
+								raitingMile = parents.find('.compare__cell--mile .raiting__ind'),
+								raitingPrice = parents.find('.compare__cell--price .compare__cell-text span');
+							raitingEng.css('width', dataCarEng+'%');
+							raitingGap.css('width', dataCarGap+'%');
+							raitingTrunk.css('width', dataCarTrunk+'%');
+							raitingMile.css('width', dataCarMile+'%');
+							raitingPrice.text(dataCarPrice);
+						},
+						slideChangeTransitionEnd: function () {
+							var parents = $(this.$wrapperEl[0]).parents('.compare__row'),
+								activeSlide = $(this.$wrapperEl[0]).find('.swiper-slide-active'),
+								dataCarEng = activeSlide.data('car-eng') && activeSlide.data('car-eng') != '' ? parseInt(activeSlide.data('car-eng')) : 0,
+								dataCarGap = activeSlide.data('car-gap') && activeSlide.data('car-gap') != '' ? parseInt(activeSlide.data('car-gap')) : 0,
+								dataCarTrunk = activeSlide.data('car-trunk') && activeSlide.data('car-trunk') != '' ? parseInt(activeSlide.data('car-trunk')) : 0,
+								dataCarMile = activeSlide.data('car-mile') && activeSlide.data('car-mile') != '' ? parseInt(activeSlide.data('car-mile')) : 0,
+								dataCarPrice = activeSlide.data('car-price') && activeSlide.data('car-price') != '' ? (activeSlide.data('car-price')).toLocaleString() : 0,
+								raitingEng = parents.find('.compare__cell--eng .raiting__ind'),
+								raitingGap = parents.find('.compare__cell--gap .raiting__ind'),
+								raitingTrunk = parents.find('.compare__cell--trunk .raiting__ind'),
+								raitingMile = parents.find('.compare__cell--mile .raiting__ind'),
+								raitingPrice = parents.find('.compare__cell--price .compare__cell-text span');
+							raitingEng.css('width', dataCarEng+'%');
+							raitingGap.css('width', dataCarGap+'%');
+							raitingTrunk.css('width', dataCarTrunk+'%');
+							raitingMile.css('width', dataCarMile+'%');
+							raitingPrice.text(dataCarPrice);
+						}
+					}
+				});
+
+			});
+
+		},
+
+		tabs: function() {
+
+			var flagAnim = true,
+				tabsPar = $('.js-tabs'),
+				tabsBtn = tabsPar.find('.tabs__nav-button'),
+				tabsItem = tabsPar.find('.tabs__list-item');
 
 			function swiperTabsInit() {
 				if (!$('.swiper-active .js-swiper-tabs').hasClass('swiper-initialized')) {
-					console.log('1');
 					var sliderTabs = new Swiper('.swiper-active .js-swiper-tabs', {
 						speed: 400,
 						spaceBetween: 0,
@@ -230,25 +306,23 @@
 							type: 'bullets',
 							clickable: true
 						},
-						on:{
+						on: {
 							init: function () {
-								this.el.classList.add('swiper-initialized')
-							},
+								this.el.classList.add('swiper-initialized');
+							}
 						}
 					});
 				}
 			}
 
 			swiperTabsInit();
-			
-			var tabsPar = $('.js-tabs'),
-				tabsBtn = tabsPar.find('.tabs__nav-button'),
-				tabsItem = tabsPar.find('.tabs__list-item');
 
 			tabsBtn.on('click', function (e) {
 				var _t = $(this),
 					_tData = _t.data('tabs-nav');
-				if (!_t.hasClass('tabs__nav-button--active')) {
+
+				if (flagAnim && !_t.hasClass('tabs__nav-button--active')) {
+					flagAnim = false;
 					tabsBtn.removeClass('tabs__nav-button--active');
 					_t.addClass('tabs__nav-button--active');
 					tabsItem.stop().fadeOut(350, function () {
@@ -260,6 +334,7 @@
 							.fadeIn(300, function () {
 								$(this).addClass('swiper-active');
 								swiperTabsInit();
+								flagAnim = true;
 							});
 					}, 350);
 				}
@@ -270,6 +345,8 @@
 		init: function () {
 
 			if ($('.js-tabs').length) this.tabs();
+
+			if ($('.js-swiper-comapre-cars').length) this.compare();
 
 			if ($('.js-all-params').length) {
 				$('.js-all-params').on('click', function (e) {
