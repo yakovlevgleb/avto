@@ -12,6 +12,7 @@
 		.swiper-slide
 			background-size: cover
 			background-repeat: no-repeat
+			background-position: center
 
 			video
 				background-color: $blue
@@ -52,6 +53,7 @@
 		border: 2px solid #fff
 		background-size: cover
 		background-repeat: no-repeat
+		background-position: center
 		cursor: pointer
 		align-self: flex-start
 		padding-top: 28.24%
@@ -119,3 +121,30 @@
 		top: 65%
 		transform: translate(-50%, -50%)
 		white-space: nowrap
+
+	@media (max-width: 1070px)
+		height: auto
+		overflow: hidden
+		flex-direction: column
+
+		&__main
+			width: 100%
+
+			.swiper-slide
+				height: auto
+
+		&__thumbs
+			height: auto
+			width: 100%
+
+			.swiper-wrapper
+				flex-wrap: nowrap
+		
+		&__thumbs-elem
+			height: 100px!important
+			padding-top: 0
+			margin-bottom: 0
+
+	@media (max-width: 650px)
+		&__thumbs-elem
+			height: 70px!important
