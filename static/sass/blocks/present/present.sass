@@ -1,0 +1,53 @@
+.present
+	display: flex
+	width: calc(50% - 32px)
+	margin: 0 16px
+	border: 1px solid rgba(#e0e0e0, .9)
+	&__title
+		padding: 10px
+		color: $red
+		text-align: center
+		font-size: 16px
+		font-weight: 700
+		line-height: 22px
+		text-transform: uppercase
+		white-space: nowrap
+		letter-spacing: 0.1em
+		writing-mode: tb-rl
+		transform: scale(-1, -1)
+	&__items
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		border-left: 1px solid rgba(#e0e0e0, .9)
+	&__item
+		position: relative
+		padding: 25px 25px 25px 60px
+		width: calc(50% - 16px)
+		& + .present__item
+			&:before
+				content: 'или'
+				display: inline-block
+				position: absolute
+				left: 10px
+				top: 50%
+				transform: translateY(-50%)
+				color: rgba(#222, .5)
+				font-size: 16px
+				line-height: 18px
+		&-overimg
+			display: flex
+			justify-content: center
+			width: 100%
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		&-img
+			max-width: 100%
+		&-title
+			text-align: center
+			color: $black
+			font-size: 16px
+			line-height: 22px
+

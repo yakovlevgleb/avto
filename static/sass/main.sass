@@ -41,6 +41,12 @@ h1:not(class)
 			background-color: $red
 			color: $white
 
+	&--blue
+		background-color: $blue
+		&:hover
+			background-color: $dark-red
+
+
 .swiper-button-prev, .swiper-button-next
 	width: 60px
 	height: 60px
@@ -70,7 +76,6 @@ h1:not(class)
 .swiper-container-rtl .swiper-button-next
 	transform: rotate(180deg)
 
-
 .swiper-pagination-bullet
 	width: 15px
 	height: 15px
@@ -85,6 +90,14 @@ h1:not(class)
 
 .swiper-pagination-bullet-active
 	background-color: $white
+
+.swiper-pagination--blue
+	.swiper-pagination
+		&-bullet
+			border: 1px solid #2c2c52
+			margin: 0 5px
+			&:hover, &-active
+				background-color: #2c2c52
 
 .ibanner
 	margin-bottom: 50px

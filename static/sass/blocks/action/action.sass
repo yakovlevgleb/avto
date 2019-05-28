@@ -1,0 +1,47 @@
+.action
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: flex-start
+	&__col
+		width: calc(50% - 16px)
+	&__list
+		margin-bottom: 35px
+		&:last-child
+			margin-bottom: 0
+		&-item
+			position: relative
+			margin-bottom: 20px
+			padding-left: 40px
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: -5px
+				width: 26px
+				height: 35px
+				background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAjCAMAAAC94eqZAAAAwFBMVEUAAADqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjLqKjL////qKjL/+/v96OjrOEDrMTj0jpL5wML+8vP72dv70dPsQEj4vL7zg4jtRUz+9fX83uD5xsj1l5vzg4fyen/xcXbrNj3+9PX96uv3rrH2pKfwYmjtS1L83+D6y834tLf2oaXzh4vwaW7vWV/qLjbw9xT4AAAAG3RSTlMA+T4JyL6Z5sOhdi8nEoHv59zQsn9uTCIYBIIsCKNlAAABS0lEQVQoz5WS53LDIBCEQV3uvUSr7l7jnp73f6sgS4et2MmM99fCxzHLcYxUKugm56ZeKLG8FAtSlnIFVAPwJ5HnbufRxAcMlUhZQ7CcOZlmywBaOavRMB04VxpMoaV1Bkaek5M3gnFOgGBIx6PMDAMkWSyEdPr5i1wIi7Ei/JiKgNfMxj6KrIK1LAI+ya9QYTrGyeXjQygIsDpEc1dsRNCZiSTeOMBFyyQkTMbhOkKLDYHvfbJ2wQXapnn9lGwWDiETL5T3rHdh0wuzGELHFH0Im8Wg8O4GOI2AI4V/kk+e4/TmzsLAl0+WjVrsz0l36x01itorJdv796f8+5U0AGFMIA5pAHJj43pybKSQE2M5JEa0xnlNjOgNuvgHUbfZ7N5FaosDvKXeok4dsG2g3rlBQEMRDW3cCV9t9xPTb1d/I7tHtmfnkXJn8QNNskMKbqRPfQAAAABJRU5ErkJggg==') no-repeat center
+			&:last-child
+				margin-bottom: 0
+		&-href
+			color: $black
+			font-size: 16px
+			line-height: 24px
+			border-bottom: 1px solid $black
+			transition: border .5s
+			&:hover
+				border-bottom-color: transparent
+	&__all-href
+		display: inline-block
+		vertical-align: top
+	&__slider
+		position: relative
+		text-align: center
+		.swiper-pagination
+			position: relative
+			display: inline-block
+			vertical-align: top
+			margin-top: 25px
+		&-overimg
+			display: block
+			font-size: 0
