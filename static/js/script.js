@@ -41,11 +41,34 @@
 				spaceBetween: 0,
 				slidesPerView: 4,
 				loop: false,
-				freeMode: true,
+				freeMode: false,
 				watchSlidesVisibility: true,
 				watchSlidesProgress: true,
 				direction: 'vertical',
-				touchRatio: 0
+				touchRatio: 0,
+				breakpoints: {
+					450: {
+						slidesPerView: 2,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+						touchRatio: 1,
+						direction: 'horizontal',
+					},
+					650: {
+						slidesPerView: 3,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+						touchRatio: 1,
+						direction: 'horizontal',
+					},
+					1070: {
+						slidesPerView: 4,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+						touchRatio: 1,
+						direction: 'horizontal',
+					}
+				}
 			});
 
 			var galleryTop = new Swiper('.js-preview-main', {
@@ -131,6 +154,7 @@
 			var _loop = function _loop(maxValInput) {
 				var plus = maxValInput.nextElementSibling.nextElementSibling,
 					minus = maxValInput.nextElementSibling,
+					step = maxValInput.getAttribute("data-steps"),
 					max = maxValInput.getAttribute("data-max"),
 					min = maxValInput.getAttribute("data-min");
 				if (!maxValInput.getAttribute("data-init")) {
@@ -150,12 +174,12 @@
 						maxValInput.dispatchEvent(eventChange)
 					});
 					plus.addEventListener("click", function () {
-						if (+maxValInput.value < +max) maxValInput.value = +maxValInput.value + 1;
+						if (+maxValInput.value < +max) maxValInput.value = +maxValInput.value + +step;
 						var eventChange = new Event("change");
 						maxValInput.dispatchEvent(eventChange)
 					});
 					minus.addEventListener("click", function () {
-						if (+maxValInput.value > +min) maxValInput.value = +maxValInput.value - 1;
+						if (+maxValInput.value > +min) maxValInput.value = +maxValInput.value - +step;
 						var eventChange = new Event("change");
 						maxValInput.dispatchEvent(eventChange)
 					})
