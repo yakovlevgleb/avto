@@ -1,4 +1,4 @@
-mixin header
+mixin header(auth)
 	header.header&attributes(attributes)
 		.header__top
 			.container-1
@@ -24,11 +24,15 @@ mixin header
 						li.top-nav__item
 							a(href="#").top-nav__link Trade in
 
-				.header-links
-					.header-links__over
-						a(href="#").header-links__link Вход
-						a(href="#").header-links__link Регистрация
-					a(href="#").btn.header-links__btn Обратный звонок
+				if auth === true
+					a(href="#").username Ivan_Ivanov_kalin_74
+
+				else
+					.header-links
+						.header-links__over
+							a(href="#").header-links__link Вход
+							a(href="#").header-links__link Регистрация
+				a(href="#").btn.header-links__btn Обратный звонок
 
 		.header__main
 			.container-1
@@ -40,11 +44,15 @@ mixin header
 						select
 							option(value="1") ул. Бр. Кашириных 141А
 							option(value="2") Свердловский тракт 5Р
-					ul.nav__mobile.nav__mobile--user
-						li.nav__mobile-elem
-							a(href="#").nav__mobile-link Вход
-						li.nav__mobile-elem
-							a(href="#").nav__mobile-link Регистрация
+					if auth === true
+						a(href="#").username.username--mobile Ivan_Ivanov_kalin_74
+
+					else
+						ul.nav__mobile.nav__mobile--user
+							li.nav__mobile-elem
+								a(href="#").nav__mobile-link Вход
+							li.nav__mobile-elem
+								a(href="#").nav__mobile-link Регистрация
 
 					ul.nav__list
 						li.nav__item.active

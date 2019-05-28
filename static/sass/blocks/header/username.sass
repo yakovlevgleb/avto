@@ -1,0 +1,35 @@
+.username
+	&--mobile
+		display: none
+
+	position: relative
+	align-self: center
+	padding-right: 23px
+	font-size: 14px
+	line-height: 1
+	color: $white
+
+	&:before
+		content: ''
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 13px
+		height: 16px
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAQAAABnqj2yAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBRwLNAVJPkxCAAAAsklEQVQY04XOMU4CARCF4SdBqr3F3gI4hi63sLKiwNoDUNFYuRfa0NhQQOIFIFkT81nAuiyJ8Z9mMn9m5kUuVWm0GlU36cSDnmqoGiwVlmiGqsVEFGjPs1HOfCR5TpGnS5/8bj1e/VoMD8bC1pdtJ+RO/mKUf9U8dfZps0+deR9jbG3I2v05xgYnK6WJ0soJG4kZjqb6rFNHzOIdqysR8YI6PlHeqBKHcd6S7G5y7/Ka7x8x/tDhdJIm6gAAAABJRU5ErkJggg==')
+
+@media (max-width: 450px)
+	.username
+		display: none
+
+		&--mobile
+			display: block
+			color: $black
+			font-weight: bold
+			text-align: center
+			padding-right: 0
+			margin-bottom: 20px
+
+			&:before
+				content: none

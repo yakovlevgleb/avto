@@ -4,7 +4,7 @@ doctype html
 html(lang="ru")
 	+head
 	body
-		+header(true)
+		+header(false)
 		main.main
 			.title
 				.container-1
@@ -28,22 +28,14 @@ html(lang="ru")
 					+preview-slider
 
 					.lotcard__bet
-						.lotcard__bet-left
-							.lotcard__bet-elem Начальная цена
-								p.lotcard__bet-cost 380 800 руб
-
-							.lotcard__bet-elem Текущая цена
-								p.lotcard__bet-cost
-									b 400 800 руб
-
-							.lotcard__bet-elem Шаг аукциона
-								p.lotcard__bet-cost 10 000 руб
+						.lotcard__bet-left.lotcard__bet-left--noborder
+							.lotcard__bet-text
+								p Для того, чтобы сделать ставку, необходимо 
+									a(href="#") зарегистрироваться
+									|. Уже зарегистрированы? 
+									a(href="#") авторизуйтесь.
 
 						.lotcard__bet-right
-							.inputnumb
-								input(type="text" data-min="1" data-max="400" value="1" data-init="").inputnumb__input.js-input-numb
-								button(type="button").js-input-numb-minus.inputnumb__minus
-								button(type="button").js-input-numb-plus.inputnumb__plus
 							button(type="submit").btn Сделать ставку
 
 					+car-characteristics
