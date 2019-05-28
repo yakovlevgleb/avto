@@ -1,0 +1,28 @@
+.raiting
+	display: inline-block
+	vertical-align: top
+	position: relative
+	width: 105px
+	height: 24px
+	background-color: #E0E1E2
+	z-index: 1
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAYCAMAAADOIiNsAAAAV1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////+ORg7oAAAAHHRSTlMA0PpGEmlm8O/cybisl5aPh3heV1E0MQigdCQjj/DnMwAAALxJREFUSMfl1jkWgzAMRdFvMPM8Z9D+1xnkA1ZCLadI1Pj8S/FaQN+6Hy/d310fpVSjFtZHKUUPPCPP+iilDkB3Dn2UUm4B2PxkZZRSZEbwjSY6XB9BZZMuG87blrQpKQSCWlyvpRAIov6CPVEIxM7DBw67hEAwJ5BLGEIgHMceY7e1UUqz19ltbZTS6nV1WxulZL1at5VRShnv+BbzkzFooy8ZYDL8ToBh0EZfqtLi+F4kFT/a+Af/EYHvBcltujxHzZlzAAAAAElFTkSuQmCC') no-repeat left top
+		background-size: cover
+		z-index: 2
+	&__ind
+		position: absolute
+		left: 0
+		top: 0
+		height: 100%
+		background-color: #ffac0d
+		z-index: 1
+		transition: width .5s
+

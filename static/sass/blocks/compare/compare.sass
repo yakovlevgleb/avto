@@ -1,0 +1,118 @@
+.compare
+	margin: 52px 0 53px
+	&__title
+		margin-bottom: 10px
+	//&__wrap
+	&__row
+		display: flex
+		position: relative
+		align-items: center
+		z-index: 1
+		&:not(.compare__row--head)
+			border-bottom: 1px solid #E0E0E0
+			transition: border .5s
+			&:before
+				content: ''
+				position: absolute
+				top: -1px
+				left: 50%
+				transform: translateX(-50%)
+				width: 100vw
+				height: calc(100% + 1px)
+				background-color: white
+				box-shadow: 0 5px 25.1px 1.9px rgba(67, 67, 85, 0.1)
+				opacity: 0
+				transition: opacity .5s
+				z-index: -1
+			&:hover
+				border-bottom-color: transparent
+				&:before
+					opacity: 1
+				.compare__cell--price .compare__cell-text
+					font-weight: 700;
+					font-size: 24px;
+					line-height: 24px;
+		&--head
+			z-index: 1
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				width: 100vw
+				height: 100%
+				background-color: whitesmoke
+				z-index: -1
+			.compare__cell
+				padding: 10px 0
+	&__cell
+		margin-right: 32px
+		padding: 25px 0
+		&:last-child
+			margin-right: 0
+		&--car
+			flex-shrink: 0
+			position: relative
+			width: 25%
+			padding: 20px 36px
+		&--eng
+			width: 15%
+		&--gap
+			width: 15%
+		&--trunk
+			width: 15%
+		&--mile
+			width: 15%
+		&--price
+			width: 15%
+			.compare__cell-text
+				font-size: 15px
+				line-height: 17px
+				transition: font .3s
+		&-text
+			color: $black
+			font-size: 14px
+			line-height: 16px
+	.swiper
+		//&-conatainer
+		//&-wrapper
+		//&-slide
+		&-buttons
+			width: 100%
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			height: 0
+			z-index: 1
+		&-button
+			&-prev, &-next
+				top: 50%
+				margin-top: 0
+				transform: translateY(-50%)
+				width: 36px
+				height: 36px
+				background-color: $blue
+				background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAMAAADzlqVxAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMA+erHuyYK9fCzqZ6UUEY9Ni0PBoiHn825VwAAAEVJREFUCNdFzkcOACEMA0Dq9qXj/z+VQyKc00hpNjE0I+XhD1F0CMrqcHdhufDoaD7xKpPFp/wt5tZglxu8wsv8xgRMtQDx8wMEK2ygLAAAAABJRU5ErkJggg==')
+			&-prev
+				left: 0
+				transform: translateY(-50%) rotate(180deg)
+			&-next
+				right: 0
+	&__cars
+		&-overimg
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 60px
+			max-width: 100%
+		&-img
+			max-width: 100%
+			max-height: 100%
+		&-title
+			color: $black
+			font-size: 15px
+			line-height: 17px
+			text-align: center
+			margin-top: 20px
