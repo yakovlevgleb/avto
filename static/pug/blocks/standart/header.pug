@@ -30,8 +30,8 @@ mixin header(auth)
 				else
 					.header-links
 						.header-links__over
-							a(href="#").header-links__link Вход
-							a(href="#").header-links__link Регистрация
+							a(href="#auth", data-fancybox="auth").header-links__link Вход
+							a(href="#reg", data-fancybox="reg").header-links__link Регистрация
 				a(href="#").btn.header-links__btn Обратный звонок
 
 		.header__main
@@ -50,9 +50,9 @@ mixin header(auth)
 					else
 						ul.nav__mobile.nav__mobile--user
 							li.nav__mobile-elem
-								a(href="#").nav__mobile-link Вход
+								a(href="#auth", data-fancybox="auth2").nav__mobile-link Вход
 							li.nav__mobile-elem
-								a(href="#").nav__mobile-link Регистрация
+								a(href="#reg", data-fancybox="reg2").nav__mobile-link Регистрация
 
 					ul.nav__list
 						li.nav__item.active

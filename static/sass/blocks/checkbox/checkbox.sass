@@ -1,4 +1,29 @@
 .checkbox
+	&--dark
+		.checkbox
+			&__input
+				&:checked ~ label
+					&:before
+						background-color: $white
+					&:after
+						opacity: 1
+			&__label
+				color: $black
+				font-size: 14px
+				line-height: 20px
+				&:before
+					border-color: #e0e0e0
+					top: 0
+				&:after
+					border-color: $red
+					top: 6px
+				&:hover
+					&:before
+						background-color: $white
+				&.warning
+					&:before
+						border-color: $red
+
 	position: relative
 	width: 100%
 	& + .checkbox
@@ -40,7 +65,7 @@
 		&:after
 			content: ''
 			position: absolute
-			left: 5px
+			left: 3px
 			top: 7px
 			width: 12px
 			height: 4px
@@ -50,3 +75,10 @@
 			opacity: 0
 			transition: opacity .5s
 			cursor: pointer
+
+		a
+			color: $blue
+			border-bottom: 1px solid $blue
+
+			&:hover
+				border-color: transparent

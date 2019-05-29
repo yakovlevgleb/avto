@@ -1,6 +1,16 @@
 .icatalog
 	margin-bottom: 50px
 
+	&--nonauth
+		.icatalog
+			&__info-bottom
+				margin-top: 0
+				width: 100%
+				justify-content: space-between
+			&__btn
+				width: 30%
+				text-align: center
+
 	&--auction
 		margin-bottom: 0
 		.icatalog
@@ -108,6 +118,10 @@
 				width: 4px
 				height: 100%
 				background-color: $auction-win
+			
+			.icatalog__status
+				p
+					background-color: $auction-win
 
 		&--passed
 			position: relative
@@ -120,6 +134,11 @@
 				width: 4px
 				height: 100%
 				background-color: $auction-passed
+
+			
+			.icatalog__status
+				p
+					background-color: $auction-passed
 
 		&--vert
 			flex-direction: column
@@ -264,6 +283,14 @@
 		
 		&--30per
 			width: 30%
+
+		&--60per
+			width: 60%
+		
+		&--sbflex
+			display: flex
+			flex-direction: column
+			justify-content: space-between
 	
 	&__info-row
 		display: flex
@@ -430,8 +457,28 @@
 		line-height: 20px
 		color: $black
 
+		&--red
+			color: $red
+
 	&__bet
 		width: 100%
+
+	&__status 
+		display: flex
+		flex-direction: row
+		font-size: 14px
+		line-height: 20px
+		color: $black
+		margin-bottom: 16px
+
+		p
+			font-size: 14px
+			line-height: 20px
+			color: $white
+			padding: 0 5px
+			margin-left: 10px
+			margin-bottom: 0
+
 
 @media (max-width: 1280px)
 	.icatalog
@@ -504,6 +551,11 @@
 			&--22per
 				width: 100%
 				margin-bottom: 10px
+
+			&--sbflex
+				display: flex
+				flex-direction: column
+				justify-content: space-between
 
 		&__info-row
 			&--30per

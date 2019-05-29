@@ -13,7 +13,8 @@ const jsList = [
 	dirs.source + '/js/ext/swiper.min.js',
 	dirs.source + '/js/ext/jquery.fancybox.min.js',
 	dirs.source + '/js/ext/jquery.dotdotdot.js',
-	dirs.source + '/js/ext/jquery.formstyler.min.js'
+	dirs.source + '/js/ext/jquery.formstyler.min.js',
+	dirs.source + '/js/ext/jquery.mask.js'
 ];
 
 const folder = process.env.folder;

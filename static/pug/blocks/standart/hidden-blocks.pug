@@ -20,3 +20,57 @@ mixin hidden-blocks
 					.popup__autocenters-element
 						p.popup__autocenters-city Магнитогорск
 						a(href="#").popup__autocenters-link ул. Зеленый Лог, 53
+
+		#auth.popup.popup--auth
+			.popup__top
+				p.popup__title Авторизация
+				.popup__subtext
+					p Авторизируйтесь, чтобы продолжить участие в аукционе.
+			form(action="#").form.popup__auth.js-validate
+				.form__row
+					.form__field
+						label.form__field-label E-mail
+						input(type="text", id="inp_027", data-type="email", data-req="req").form__field-input
+					.form__field
+						label.form__field-label Пароль
+						input(type="text", id="inp_026", data-req="req").form__field-input
+				.form__row
+					.popup__btnscontainer
+						button(type="submit").btn Войти
+						a(href="#").popup__link Забыли пароль
+					p.popup__auth-text Ещё не зарегистрированы? 
+						a(href="#").popup__link Регистрация
+
+		#reg.popup.popup--auth
+			.popup__top
+				p.popup__title Регистрация
+				.popup__subtext
+					p Зарегистрируйтесь, чтобы продолжить участие в аукционе.
+						br
+						| Все поля обязательные для заполнения.
+			form(action="#").form.popup__auth.js-validate
+				.form__row
+					.form__field
+						label.form__field-label Ваше имя
+						input(type="text" id="inp_022", data-req="req").form__field-input
+					.form__field
+						label.form__field-label E-mail
+						input(type="text" id="inp_023", data-type="email", data-req="req").form__field-input
+				.form__row
+					.form__field
+						label.form__field-label Телефон
+						input(type="text" id="inp_024", data-type="phone", data-req="req").form__field-input.js-phone-mask
+					.form__field
+						label.form__field-label Пароль
+						input(type="text" id="inp_025", data-req="req").form__field-input
+				.form__row
+					.checkbox.checkbox--dark
+						input(type="checkbox", id="personal", data-req="req", data-type="checkbox").checkbox__input
+						label(for="personal").checkbox__label Даю согласие на 
+							a(href="#") обработку персональных данных
+				.form__row
+					.popup__btnscontainer
+						button(type="submit").btn Войти
+						a(href="#").popup__link Забыли пароль
+					p.popup__auth-text Ещё не зарегистрированы? 
+						a(href="#").popup__link Регистрация

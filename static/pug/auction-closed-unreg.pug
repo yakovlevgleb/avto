@@ -1,0 +1,65 @@
+include blocks/blocks
+
+doctype html
+html(lang="ru")
+	+head
+	body
+		+header(false)
+		main.main
+			.title
+				.container-1
+					+breadcrumbs
+					h1 Аукцион
+			section.auction
+				.container-1
+					.auction__topbar
+						.auction__topbar-left
+							button(type="button").auction__tab-link.active Активные лоты
+							button(type="button").auction__tab-link Мои лоты
+
+						.auction__topbar-right
+							button(type="button").auction__filter-open.js-open-filter Поиск авто
+
+					.auction__filter
+						+filter
+					
+					section.icatalog.icatalog--auction.icatalog--nonauth
+						.icatalog__list
+							- for (var i = 0; i < 5; i++) {
+
+								.icatalog__element
+									.icatalog__photos
+										.swiper-container.js-catalog-slider
+											.swiper-wrapper
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-1.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-1.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-2.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-2.jpg", alt="")
+												.swiper-slide.icatalog__photos-slide
+													a(href="./img/catalog-photo-3.jpg", data-fancybox='gallery-1')
+														img(src="./img/catalog-photo-3.jpg", alt="")
+											.swiper-pagination
+
+									.icatalog__info
+										.icatalog__info-top
+											.icatalog__info-col.icatalog__info-col--60per
+												a(href="#").icatalog__car Mercedes GLE 350
+												p.icatalog__char 2008 г.в., 241 534 км, Внедорожник 5 Door, СVT, Бензин Инжектор, 170 лс
+											.icatalog__info-col.icatalog__info-col--30per.icatalog__info-col--sbflex
+												.icatalog__costs
+													p.icatalog__costs-value
+														b Завершён
+												.icatalog__costs
+													p.icatalog__costs-value.icatalog__costs-value--red
+														b Не состоялся
+
+										.icatalog__info-bottom
+											.icatalog__autocenter Регинас Профи, Екатеринбург
+												p.icatalog__autocenter-adress ул. Высоцкого, 3
+							- }
+					+pagination
+		+footer
+		+hidden-blocks
+		+scripts
