@@ -221,6 +221,16 @@
 
 		compare: function() {
 
+			function GetDataActiveSlide(selector) {
+				var parents = $(selector).parents('.compare__row'),
+					activeSlideData = $(selector).find('.swiper-slide-active').data();
+				parents.find('.compare__cell--eng .raiting__ind').css('width', (activeSlideData.eng ? activeSlideData.eng : 0) +'%');
+				parents.find('.compare__cell--gap .raiting__ind').css('width', (activeSlideData.gap ? activeSlideData.gap : 0)+'%');
+				parents.find('.compare__cell--trunk .raiting__ind').css('width', (activeSlideData.trunk ? activeSlideData.trunk : 0)+'%');
+				parents.find('.compare__cell--mile .raiting__ind').css('width', (activeSlideData.mile ? activeSlideData.mile : 0)+'%');
+				parents.find('.compare__cell--price .compare__cell-text span').text((activeSlideData.price ? (activeSlideData.price).toLocaleString() : '0'));
+			}
+
 			$('.js-swiper-comapre-cars').each(function () {
 				var _t = $(this),
 					$btnPrev = _t.parent('.compare__cell').find('.swiper-button-prev')[0],
@@ -235,42 +245,10 @@
 					},
 					on: {
 						init: function () {
-							var parents = $(this.$wrapperEl[0]).parents('.compare__row'),
-								activeSlide = $(this.$wrapperEl[0]).find('.swiper-slide-active'),
-								dataCarEng = activeSlide.data('car-eng') && activeSlide.data('car-eng') != '' ? parseInt(activeSlide.data('car-eng')) : 0,
-								dataCarGap = activeSlide.data('car-gap') && activeSlide.data('car-gap') != '' ? parseInt(activeSlide.data('car-gap')) : 0,
-								dataCarTrunk = activeSlide.data('car-trunk') && activeSlide.data('car-trunk') != '' ? parseInt(activeSlide.data('car-trunk')) : 0,
-								dataCarMile = activeSlide.data('car-mile') && activeSlide.data('car-mile') != '' ? parseInt(activeSlide.data('car-mile')) : 0,
-								dataCarPrice = activeSlide.data('car-price') && activeSlide.data('car-price') != '' ? (activeSlide.data('car-price')).toLocaleString() : 0,
-								raitingEng = parents.find('.compare__cell--eng .raiting__ind'),
-								raitingGap = parents.find('.compare__cell--gap .raiting__ind'),
-								raitingTrunk = parents.find('.compare__cell--trunk .raiting__ind'),
-								raitingMile = parents.find('.compare__cell--mile .raiting__ind'),
-								raitingPrice = parents.find('.compare__cell--price .compare__cell-text span');
-							raitingEng.css('width', dataCarEng+'%');
-							raitingGap.css('width', dataCarGap+'%');
-							raitingTrunk.css('width', dataCarTrunk+'%');
-							raitingMile.css('width', dataCarMile+'%');
-							raitingPrice.text(dataCarPrice);
+							GetDataActiveSlide(this.$wrapperEl[0]);
 						},
 						slideChangeTransitionEnd: function () {
-							var parents = $(this.$wrapperEl[0]).parents('.compare__row'),
-								activeSlide = $(this.$wrapperEl[0]).find('.swiper-slide-active'),
-								dataCarEng = activeSlide.data('car-eng') && activeSlide.data('car-eng') != '' ? parseInt(activeSlide.data('car-eng')) : 0,
-								dataCarGap = activeSlide.data('car-gap') && activeSlide.data('car-gap') != '' ? parseInt(activeSlide.data('car-gap')) : 0,
-								dataCarTrunk = activeSlide.data('car-trunk') && activeSlide.data('car-trunk') != '' ? parseInt(activeSlide.data('car-trunk')) : 0,
-								dataCarMile = activeSlide.data('car-mile') && activeSlide.data('car-mile') != '' ? parseInt(activeSlide.data('car-mile')) : 0,
-								dataCarPrice = activeSlide.data('car-price') && activeSlide.data('car-price') != '' ? (activeSlide.data('car-price')).toLocaleString() : 0,
-								raitingEng = parents.find('.compare__cell--eng .raiting__ind'),
-								raitingGap = parents.find('.compare__cell--gap .raiting__ind'),
-								raitingTrunk = parents.find('.compare__cell--trunk .raiting__ind'),
-								raitingMile = parents.find('.compare__cell--mile .raiting__ind'),
-								raitingPrice = parents.find('.compare__cell--price .compare__cell-text span');
-							raitingEng.css('width', dataCarEng+'%');
-							raitingGap.css('width', dataCarGap+'%');
-							raitingTrunk.css('width', dataCarTrunk+'%');
-							raitingMile.css('width', dataCarMile+'%');
-							raitingPrice.text(dataCarPrice);
+							GetDataActiveSlide(this.$wrapperEl[0]);
 						}
 					}
 				});
@@ -404,7 +382,26 @@
 			$('.js-open-filter').click(function() {
 				$(this).toggleClass('active');
 				$('.auction__filter').slideToggle();
-			})
+			});
+
+			$('.js-toggle-overview-text').on('click', function (e) {
+				var _t = $(this),
+					hiddenText = _t.siblings('.overview__text-hidden');
+				if (hiddenText.length) {
+					if (_t.hasClass('active')) {
+						_t
+							.removeClass('active')
+							.text('Узнать больше');
+						hiddenText.slideUp(300);
+					} else {
+						_t
+							.addClass('active')
+							.text('Свернуть');
+						hiddenText.slideDown(300);
+					}
+				}
+				e.preventDefault();
+			});
 
 			return this;
 		}
