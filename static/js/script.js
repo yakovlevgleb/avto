@@ -266,9 +266,38 @@
 		}
 	}).init();
 
-	window.crlv.mask = ({
+	window.reginas.mask = ({
 		init: function () {
 			$('.js-phone-mask').mask('+7 (000) 000-00-00');
+		}
+	}).init();
+
+	window.reginas.timer = ({
+		init: function () {
+			$('.timer time').each(function () {
+				var _t = $(this),
+					val = _t.data('time')
+				var timer = new easytimer.Timer();
+
+				timer.start({
+					countdown: true,
+					startValues: {
+						seconds: val
+					}
+				});
+
+				_t.html(timer.getTimeValues().toString());
+
+				timer.addEventListener('secondsUpdated', function (e) {
+					_t.html(timer.getTimeValues().toString());
+				});
+
+				timer.addEventListener('targetAchieved', function (e) {
+					console.log(_t.parent())
+					_t.parent().parent().html('<div class="icatalog__costs"><p class="icatalog__costs-value"><b>Завершён</b></p></div>');
+				});
+
+			});
 		}
 	}).init();
 
@@ -276,37 +305,50 @@
 
 		compare: function () {
 
-			function GetDataActiveSlide(selector) {
-				var parents = $(selector).parents('.compare__row'),
-					activeSlideData = $(selector).find('.swiper-slide-active').data();
-				parents.find('.compare__cell--eng .raiting__ind').css('width', (activeSlideData.eng ? activeSlideData.eng : 0) + '%');
-				parents.find('.compare__cell--gap .raiting__ind').css('width', (activeSlideData.gap ? activeSlideData.gap : 0) + '%');
-				parents.find('.compare__cell--trunk .raiting__ind').css('width', (activeSlideData.trunk ? activeSlideData.trunk : 0) + '%');
-				parents.find('.compare__cell--mile .raiting__ind').css('width', (activeSlideData.mile ? activeSlideData.mile : 0) + '%');
-				parents.find('.compare__cell--price .compare__cell-text span').text((activeSlideData.price ? (activeSlideData.price).toLocaleString() : '0'));
-			}
+			var stopFlag = false;
 
-			$('.js-swiper-comapre-cars').each(function () {
-				var _t = $(this),
-					$btnPrev = _t.parent('.compare__cell').find('.swiper-button-prev')[0],
-					$btnNext = _t.parent('.compare__cell').find('.swiper-button-next')[0];
+			$(window).resize(function () {
 
-				new Swiper(_t[0], {
-					speed: 400,
-					spaceBetween: 0,
-					navigation: {
-						nextEl: $btnNext,
-						prevEl: $btnPrev
-					},
-					on: {
-						init: function () {
-							GetDataActiveSlide(this.$wrapperEl[0]);
-						},
-						slideChangeTransitionEnd: function () {
-							GetDataActiveSlide(this.$wrapperEl[0]);
-						}
+				if ($(window).width() > 1023 && !stopFlag) {
+					stopFlag = true;
+
+					function GetDataActiveSlide(selector) {
+						var parents = $(selector).parents('.compare__row'),
+							activeSlideData = $(selector).find('.swiper-slide-active').data();
+						parents.find('.compare__cell--eng .raiting__ind').css('width', (activeSlideData.eng ? activeSlideData.eng : 0) + '%');
+						parents.find('.compare__cell--gap .raiting__ind').css('width', (activeSlideData.gap ? activeSlideData.gap : 0) + '%');
+						parents.find('.compare__cell--trunk .raiting__ind').css('width', (activeSlideData.trunk ? activeSlideData.trunk : 0) + '%');
+						parents.find('.compare__cell--mile .raiting__ind').css('width', (activeSlideData.mile ? activeSlideData.mile : 0) + '%');
+						parents.find('.compare__cell--price .compare__cell-text span').text((activeSlideData.price ? (activeSlideData.price).toLocaleString() : '0'));
 					}
-				});
+
+					$('.js-swiper-comapre-cars').each(function () {
+						var _t = $(this),
+							$btnPrev = _t.parent('.compare__cell').find('.swiper-button-prev')[0],
+							$btnNext = _t.parent('.compare__cell').find('.swiper-button-next')[0];
+
+						new Swiper(_t[0], {
+							speed: 400,
+							spaceBetween: 0,
+							navigation: {
+								nextEl: $btnNext,
+								prevEl: $btnPrev
+							},
+							on: {
+								init: function () {
+									GetDataActiveSlide(this.$wrapperEl[0]);
+								},
+								slideChangeTransitionEnd: function () {
+									GetDataActiveSlide(this.$wrapperEl[0]);
+								}
+							}
+						});
+
+					});
+
+				} else {
+					stopFlag = true;
+				}
 
 			});
 
@@ -457,6 +499,8 @@
 				}
 				e.preventDefault();
 			});
+
+			$(window).trigger('resize');
 
 			return this;
 		}
