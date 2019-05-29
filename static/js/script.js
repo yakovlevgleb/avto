@@ -147,6 +147,30 @@
 					}
 				}
 			});
+
+			$(".js-tooltip-fancy").fancybox({
+				lang: 'ru',
+				touch: false,
+				i18n: {
+					'ru': {
+						CLOSE: 'Закрыть',
+						NEXT: 'Следующая',
+						PREV: 'Предыдущая',
+						ERROR: 'Запрошенный контент не может быть загружен. <br> Повторите попытку позже.',
+						PLAY_START: 'Начать слайд-шоу',
+						PLAY_STOP: 'Остановить слайд-шоу',
+						FULL_SCREEN: 'Полный экран',
+						THUMBS: 'Эскизы',
+						DOWNLOAD: 'Скачать',
+						SHARE: 'Поделиться',
+						ZOOM: 'Увеличить'
+					}
+				},
+				beforeShow: function (instance) {
+					$('#tooltip .popup__title').text(instance.$lastFocus.data('title'))
+					$('#tooltip .popup__text').text(instance.$lastFocus.data('text'))
+				}
+			});
 		}
 	}).init();
 
@@ -294,7 +318,7 @@
 
 				timer.addEventListener('targetAchieved', function (e) {
 					console.log(_t.parent())
-					_t.parent().parent().html('<div class="icatalog__costs"><p class="icatalog__costs-value"><b>Завершён</b></p></div>');
+					_t.parent().parent().html('<b>Завершён</b>');
 				});
 
 			});
