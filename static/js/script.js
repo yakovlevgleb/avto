@@ -284,8 +284,9 @@
 			this.maxValInputs();
 
 			$('.js-validate').submit(function (e) {
-				if (window.reginas.checkForm($(this))) {
-					return false;
+				if (!window.reginas.checkForm($(this))) {
+					console.log('submit');
+					return !window.reginas.checkForm($(this)) && e.preventDefault()
 				}
 			});
 		}
