@@ -270,10 +270,12 @@
 		line-height: 20px
 		font-weight: normal
 		color: rgba(57,57,57,0.5)
+		align-self: center
 
 	&__info-col
 		&--45per
 			width: 45%
+			padding-right: 10px
 
 		&--35per
 			width: 35%
@@ -379,6 +381,7 @@
 
 	&__btn
 		align-self: flex-end
+		margin-left: auto
 
 	.swiper-pagination
 		display: flex
@@ -532,6 +535,7 @@
 			.icatalog
 				&__element
 					max-height: inherit
+					margin-bottom: 16px
 
 					&:before
 						top: 0
@@ -545,7 +549,6 @@
 
 				&__info
 					padding: 20px 40px
-					margin-bottom: 16px
 
 					&--30per
 						padding-top: 0
@@ -586,6 +589,7 @@
 		&__info-col
 			&--45per
 				width: 100%
+				padding-right: 0
 				margin-bottom: 10px
 
 			&--35per
@@ -623,14 +627,17 @@
 			justify-content: flex-start
 
 		&__autocenter
-			margin-bottom: 0
+			margin-bottom: 9px
+			align-self: flex-start
 
 		&__btn
 			align-self: flex-start
+			margin-left: 0
 
 		&__info
 			border: 1px solid #e0e0e0
 			border-top: none
+			height: 100%
 
 		&__credit-over
 			transform: translateX(-30%)
@@ -652,3 +659,11 @@
 		&--auction
 			.icatalog__info
 				padding: 15px 20px
+
+		&__cities
+			display: flex
+			flex-direction: column
+		
+		&__cities-link
+			margin-left: 0
+			align-self: flex-start
