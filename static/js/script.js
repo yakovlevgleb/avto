@@ -102,7 +102,9 @@
 
 	window.reginas.styler = ({
 		init: function () {
-			$('select').styler();
+			$('select').styler({
+				selectSmartPositioning: false
+			});
 		}
 	}).init();
 
@@ -186,7 +188,7 @@
 							checkResult = false;
 						}
 						break;
-					case 'mobile':
+					case 'phone':
 						if ($.trim($(this).val()).length < 17) {
 							$(this).addClass('warning');
 							checkResult = false;
@@ -285,7 +287,6 @@
 
 			$('.js-validate').submit(function (e) {
 				if (!window.reginas.checkForm($(this))) {
-					console.log('submit');
 					return !window.reginas.checkForm($(this)) && e.preventDefault()
 				}
 			});
