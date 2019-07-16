@@ -4084,20 +4084,6 @@ _:-ms-fullscreen,
 	width: 100%;
 }
 
-.popup .field label {
-	display: block;
-	line-height: 1;
-	font-size: 24px;
-	color: #242424;
-	margin-bottom: 15px;
-	background: rgba(0, 0, 0, 0) url("../pic/line.jpg") repeat-x scroll 0 11px;
-}
-
-.popup .field label>span {
-	background: #fff;
-	padding-right: 10px;
-}
-
 .popup .field input[type="text"],
 .popup .field textarea {
 	box-sizing: border-box;
