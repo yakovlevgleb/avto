@@ -4710,10 +4710,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
 	display: none;
 }
 
-.tth_engine li.tth_eng_type {
-	background: rgba(0, 0, 0, 0) url("") repeat-x scroll left bottom;
-}
-
 .tth_engine li.first {
 	border-bottom: 1px dotted rgb(45, 146, 255) !important;
 	display: table;
@@ -5186,4 +5182,12 @@ textarea.form__field-input {
 		width: 100%;
 		margin-bottom: 20px;
 	}
+}
+
+.msg.error {
+	color: red;
+}
+
+.popup--auth .msg {
+	max-width: 610px;
 }
