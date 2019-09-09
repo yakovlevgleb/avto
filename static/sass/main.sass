@@ -111,6 +111,27 @@ h1:not(class)
 		max-width: 100%
 		height: auto
 
+.city-list__item
+	display: inline-block
+	padding-right: 5px
+	font-size: 18px
+
+	a
+		color: $black
+		border-bottom: 1px solid $black
+		transition: .5s border-color
+
+		&:hover
+			border-color: transparent
+
+.city-list__item::after
+	content: "|"
+	display: inline-block
+	margin-left: 5px
+
+.city-list__item:last-child::after
+	content: ""
+
 @media (max-width: 1280px)
 	.container-1
 		width: 1024px

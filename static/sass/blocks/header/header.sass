@@ -33,7 +33,7 @@
 			border: none
 			border-radius: 0
 			background-color: transparent
-			line-height: 42px
+			line-height: 44px
 			padding-right: 25px
 
 		.jq-selectbox__select-text
@@ -81,8 +81,7 @@
 			content: ''
 			position: absolute
 			left: 0
-			top: 50%
-			transform: translateY(-50%)
+			top: calc(50% - 6.5px)
 			width: 15px
 			height: 13px
 			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAQAAADcF/zKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAkSEgy6bGEgAAAA6ElEQVQY02WQMUoDARBFX9w0GouAyGK9qGXSCTlDahs7sUkhiJ0n0MrGtVEs0lgLok1ygTQSBCFIRDClIEKybGN4FptkF/KnGf5n3gyDLKppz297NnMvDxvmaizHHXXgqQO1M3dXmCsE+lzSn/WZFtNtdeqHU7W9DA8Lu8MiPKBGnYSLGfCchDo1ggx+rWpiZKzGRk5UjaUM/PBLlTWG7PPOC10qAKRQcpMDXllni21SutywA0CLEZ8lD7mjRZU93kipMGKVkEc2eOA4e8eJT4W778UzVZ/LRIyZ8MUYgIAhV9xyRMofu/8HaLrP8XDY3AAAAABJRU5ErkJggg==')
@@ -150,7 +149,7 @@
 			height: 7px
 			top: 50%
 			transition: .5s transform
-			transform: translateY(-50%) rotate(0)
+			transform: translateY(-50%) rotate(180deg)
 
 		.jq-selectbox__trigger .jq-selectbox__trigger-arrow
 			position: static
@@ -158,9 +157,6 @@
 			width: 11px
 			height: 7px
 			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAHCAMAAADpsEdvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAASFBMVEUsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFIsLFL///8dxRfoAAAAFnRSTlMAHb0eHNsZ2fbaGhfXxBgV1McPyzERghD51wAAAAFiS0dEFwvWmI8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAwLIAvtUcg/AAAAQ0lEQVQI1y2LSRKAIBDE2hFENoEB+v9PFZecUpUKsNhkx4+xtObTw/GkD4/GxHxlpgiUyqbQxlog7LqqdgqGzPeaMm5SqgKFvm+wMwAAAABJRU5ErkJggg==')
-
-		.jq-selectbox.dropdown.opened .jq-selectbox__trigger
-			transform: translateY(-50%) rotate(180deg)
 
 	&__burger
 		z-index: 101

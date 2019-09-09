@@ -72,7 +72,7 @@ gulp.task('sass', function () {
 		})).pipe(wait(100)).pipe(sourcemaps.init()).
 		pipe(sass()).
 		pipe(postcss(processors)).
-		pipe(sourcemaps.write('/')).
+		// pipe(sourcemaps.write('/')).
 		pipe(gulp.dest(dirs.build + '/static/css/')).
 		pipe(browserSync.stream({
 			match: '**/*.css'

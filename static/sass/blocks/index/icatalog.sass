@@ -92,8 +92,15 @@
 		&:hover
 			box-shadow: 0 6px 29px rgba(#434355, .24)
 
+			.swiper-pagination
+				opacity: 1
+
 		&:last-child
 			margin-bottom: 0
+
+		.swiper-pagination
+			opacity: 0
+			transition: opacity .5s
 
 		&--in
 			position: relative
@@ -188,12 +195,12 @@
 						flex-direction: column
 					&-col
 						width: 100%
-						&--45per
+						&--53per
 							order: 1
-						&--35per
+						&--25per
 							order: 3
 							margin: 19px 0 21px
-					&-row--30per
+					&-row--22per
 						justify-content: flex-start
 						width: 100%
 						order: 2
@@ -232,6 +239,24 @@
 	&__photos
 		max-width: 380px
 
+		.swiper-button-next
+			right: 0
+		.swiper-button-prev
+			left: 0
+
+		.swiper-container
+			height: 100%
+	
+	&__photos-slide
+		&:before
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			content: ''
+			background-color: rgba(0, 0, 0, 0.2)
+
 	&__info
 		width: 100%
 		border: 1px solid #e0e0e0
@@ -250,6 +275,7 @@
 
 	&__car
 		font-size: 20px
+		line-height: 20px
 		color: $black
 		font-weight: 500
 		margin-bottom: 10px
@@ -273,6 +299,10 @@
 		align-self: center
 
 	&__info-col
+		&--53per
+			width: 53%
+			padding-right: 10px
+		
 		&--45per
 			width: 45%
 			padding-right: 10px
@@ -282,9 +312,12 @@
 
 		&--22per
 			width: 22%
-		
+
 		&--30per
 			width: 30%
+		
+		&--25per
+			width: 25%
 
 		&--60per
 			width: 60%
@@ -299,8 +332,8 @@
 		flex-direction: row
 		justify-content: space-between
 
-		&--30per
-			width: 30%
+		&--22per
+			width: 22%
 
 	&__year
 		white-space: nowrap
@@ -587,7 +620,7 @@
 			flex-direction: column
 
 		&__info-col
-			&--45per
+			&--53per
 				width: 100%
 				padding-right: 0
 				margin-bottom: 10px
@@ -596,11 +629,19 @@
 				width: 100%
 				margin-bottom: 10px
 
-			&--30per
+			&--25per
 				width: 100%
 				margin-bottom: 10px
 			
 			&--22per
+				width: 100%
+				margin-bottom: 10px
+			
+			&--30per
+				width: 100%
+				margin-bottom: 10px
+			
+			&--45per
 				width: 100%
 				margin-bottom: 10px
 
@@ -610,7 +651,7 @@
 				justify-content: space-between
 
 		&__info-row
-			&--30per
+			&--22per
 				justify-content: flex-start
 				width: 100%
 				margin-bottom: 10px

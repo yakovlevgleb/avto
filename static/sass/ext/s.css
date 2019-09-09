@@ -3407,7 +3407,7 @@ _:-ms-fullscreen,
 }
 
 .back-to {
-	padding: 10px 0 30px;
+	padding: 20px 0 0px;
 }
 
 .back-to a {
@@ -4063,6 +4063,10 @@ _:-ms-fullscreen,
 	padding-bottom: 25px;
 }
 
+.popup .field-1 .field-1 {
+	padding-bottom: 0;
+}
+
 .popup .field-2 {
 	width: 285px;
 	padding-left: 30px;
@@ -4128,7 +4132,7 @@ _:-ms-fullscreen,
 
 .popup .star {
 	color: #9a2828;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 700;
 }
 
@@ -5148,9 +5152,9 @@ textarea.form__field-input.warning {
 	}
 }
 
-.popup--auth .form__field {
+/* .popup--auth .form__field {
 	margin-bottom: 20px;
-}
+} */
 
 .popup--auth .left-row {
 	width: calc(50% - 15px)
@@ -5190,4 +5194,120 @@ textarea.form__field-input {
 
 .popup--auth .msg {
 	max-width: 610px;
+}
+
+.form__row--booking .left-row {
+	float: none;
+}
+
+.bx-firefox .form__row--booking .right-row {
+	margin-bottom: -1px;
+}
+
+.form__row--booking .right-row {
+	margin-bottom: 0;
+}
+
+.form__row--booking {
+	width: 650px
+}
+
+.form__row--booking .form__field {
+	margin-bottom: 20px;
+}
+
+.form__row--booking .form__field:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+	.form__row--booking {
+		width: 100%;
+	}
+}
+
+@media (max-width: 650px) {
+	.form__row--booking .right-row {
+		margin-bottom: 20px;
+	}
+
+	.popup--auth .checkbox {
+		margin-bottom: 20px;
+	}
+}
+
+.mfeedback .left-row {
+	width: calc(100% / 2 - 15px);
+	margin-right: 30px;
+}
+
+.mfeedback .right-row {
+	width: calc(100% / 2 - 15px);
+}
+
+.mfeedback .form__row {
+	align-items: flex-start;
+}
+
+div.mf-name,
+div.mf-email,
+div.mf-captcha,
+div.mf-message,
+div.mf-name input,
+div.mf-email input,
+div.mf-message textarea {
+	width: 100%;
+}
+
+div.mf-name,
+div.mf-email,
+div.mf-message {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+div.mf-name {
+	margin-bottom: 20px;
+}
+
+div.mf-text {
+	display: block;
+	width: 100%;
+	margin-bottom: 7px;
+	color: rgba(34, 34, 34, 0.5);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+}
+
+div.mf-message textarea {
+	height: 108px;
+}
+
+.bx-firefox div.mf-message textarea {
+	height: 114px;
+}
+
+@media (max-width: 650px) {
+	.mfeedback .form__row {
+		flex-direction: column;
+	}
+
+	.mfeedback .right-row,
+	.mfeedback .left-row {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	div.mf-name,
+	div.mf-email,
+	div.mf-captcha {
+		padding-bottom: 0;
+		margin-bottom: 20px;
+	}
+
+	div.mf-message {
+		padding-bottom: 0;
+	}
 }

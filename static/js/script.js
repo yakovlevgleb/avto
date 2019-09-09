@@ -1,5 +1,19 @@
 ﻿$(document).ready(function () {
 
+	if (window.NodeList && !NodeList.prototype.forEach) {
+		NodeList.prototype.forEach = function (callback, thisArg) {
+			thisArg = thisArg || window;
+			for (var i = 0; i < this.length; i++) {
+				callback.call(thisArg, this[i], i, this);
+			}
+		};
+	};
+
+	document.querySelectorAll('body *:not([class]):not([id]), .hero__title').forEach(function(item) {
+		item.innerHTML = item.innerHTML.replace(/( |&nbsp;|\(){1}([№а-яА-Я]){1}(\.){0,1} /g, '$1$2$3&nbsp;');
+		item.innerHTML = item.innerHTML.replace(/( |&nbsp;|\(){1}([№а-яА-Я]){1}(\.){0,1} /g, '$1$2$3&nbsp;');
+	});
+
 	window.reginas = {};
 
 	window.reginas.slider = ({
@@ -8,6 +22,7 @@
 
 			var heroSlider = new Swiper('.js-hero-slider', {
 				speed: 400,
+				loop: true,
 				navigation: {
 					nextEl: '.js-hero-slider .swiper-button-next',
 					prevEl: '.js-hero-slider .swiper-button-prev',
@@ -32,10 +47,15 @@
 			var catalogItemSlider = new Swiper('.js-catalog-slider', {
 				speed: 400,
 				spaceBetween: 30,
+				loop: true,
 				pagination: {
 					el: '.js-catalog-slider .swiper-pagination',
 					type: 'bullets',
 					clickable: true
+				},
+				navigation: {
+					nextEl: '.js-catalog-slider .swiper-button-next',
+					prevEl: '.js-catalog-slider .swiper-button-prev',
 				}
 			});
 
