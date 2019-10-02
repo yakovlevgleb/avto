@@ -5286,7 +5286,7 @@ div.mf-message textarea {
 }
 
 .bx-firefox div.mf-message textarea {
-	height: 114px;
+	height: 106px;
 }
 
 @media (max-width: 650px) {
@@ -5310,4 +5310,78 @@ div.mf-message textarea {
 	div.mf-message {
 		padding-bottom: 0;
 	}
+}
+
+ul.mark-list,
+ol.mark-list {
+	margin: 15px 0 25px;
+}
+
+ul.mark-list ul.mark-list,
+ol.mark-list ol.mark-list{
+	margin: 5px 0 10px;
+}
+
+ul.mark-list li,
+ol.mark-list li {
+	position: relative;
+	padding-left: 25px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #222;
+}
+
+ul.mark-list li:before {
+	content: '';
+	display: block;
+	position: absolute;
+  top: 10px;
+  left: 0;
+	width: 4px;
+	height: 4px;
+	border-radius: 2px;
+	background-color: #e31e25;
+}
+
+ol.mark-list {
+	list-style-position: inside;
+  list-style-type: none;
+	counter-reset: counterList1;
+}
+
+ol.mark-list ol.mark-list{
+	counter-reset: counterList2;
+}
+
+ol.mark-list ol.mark-list ol.mark-list{
+	counter-reset: counterList3;
+}
+
+ol.mark-list li:before {
+	position: absolute;
+  top: 0;
+  left: 0;
+  content: counter(counterList1) ". ";
+  counter-increment: counterList1;
+  color: #e31e25;
+  font-weight: 700;
+  font-style: italic;
+}
+
+ol.mark-list ol.mark-list li {
+	padding-left: 35px;
+}
+
+ol.mark-list ol.mark-list li:before {
+	content: counter(counterList1) "." counter(counterList2) ". ";
+  counter-increment: counterList2;
+}
+
+ol.mark-list ol.mark-list ol.mark-list li {
+	padding-left: 40px;
+}
+
+ol.mark-list ol.mark-list ol.mark-list li:before {
+	content: counter(counterList1) "." counter(counterList2) "." counter(counterList3) ". ";
+  counter-increment: counterList3;
 }
