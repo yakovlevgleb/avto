@@ -316,6 +316,7 @@
 	window.reginas.mask = ({
 		init: function () {
 			$('.js-phone-mask').mask('+7 (000) 000-00-00');
+			$('#arrFilter_P1_MIN, #arrFilter_P1_MAX, #arrFilter_316_MAX').mask('000.000.000');
 		}
 	}).init();
 
