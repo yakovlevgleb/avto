@@ -237,7 +237,7 @@
 					right: 0
 
 	&__photos
-		max-width: 380px
+		width: 380px
 
 		.swiper-button-next
 			right: 0
@@ -246,6 +246,11 @@
 
 		.swiper-container
 			height: 100%
+			width: 100%
+		
+		.swiper-slide
+			a
+				display: block
 	
 	&__photos-slide
 		&:before
@@ -523,7 +528,7 @@
 				&__element
 					max-height: 230px
 				&__photos
-					max-width: 380px
+					width: 380px
 				&__info
 					padding: 20px 40px
 
@@ -534,7 +539,7 @@
 			transform: translateX(0)
 
 		&__photos
-			max-width: 300px
+			width: 300px
 
 		&__photos-slide
 			img
@@ -578,7 +583,7 @@
 						z-index: 10
 
 				&__photos
-					max-width: inherit
+					width: auto
 
 				&__info
 					padding: 20px 40px
@@ -603,7 +608,7 @@
 				width: 100%
 
 		&__photos
-			max-width: inherit
+			width: auto
 
 		&__photos-slide
 			a
