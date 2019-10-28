@@ -130,10 +130,19 @@ table {
 
 a {
 	text-decoration: none;
-	color: #2a5b90;
+	color: #2c2c52;
 }
 
-a:hover {}
+a:not([class]),
+.txttohtmllink {
+	border-bottom: 1px solid #2c2c52;
+	transition: .5s border-color !important;
+	text-decoration: none!important;
+}
+
+a:hover {
+	border-color: transparent;
+}
 
 a.dashed {
 	text-decoration: none;
@@ -3709,7 +3718,7 @@ _:-ms-fullscreen,
 .pagination ul li a,
 .pagination ul li span {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: text-top;
 }
 
 .pagination ul li.prev {
