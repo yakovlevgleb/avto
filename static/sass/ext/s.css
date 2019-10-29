@@ -5394,3 +5394,9 @@ ol.mark-list ol.mark-list ol.mark-list li:before {
 	content: counter(counterList1) "." counter(counterList2) "." counter(counterList3) ". ";
   counter-increment: counterList3;
 }
+
+.mf-email input.warning,
+.mf-name input.warning,
+.mf-message textarea.warning {
+	border-color: red
+}
