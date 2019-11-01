@@ -189,10 +189,10 @@ gulp.task('js', function() {
 				}
 			})
 		}))
-		.pipe(sourcemaps.init())
-		.pipe(sourcemaps.write())
-		.pipe(uglify())
-		.pipe(rename('script.min.js'))
+		// .pipe(sourcemaps.init())
+		// .pipe(sourcemaps.write())
+		// .pipe(uglify())
+		.pipe(rename('script.js'))
 		.pipe(gulp.dest(dirs.build + "/static/js/"))
 		.pipe(browserSync.stream());
 });
